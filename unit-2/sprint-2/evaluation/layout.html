@@ -5,8 +5,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+  font-family: 'Roboto', sans-serif;
+}
+h4{
+  color:#607D8B;
+  margin-left:10px;
+  margin-bottom:40px;
+}
+h2{
+  margin-left:10px;
+  margin-bottom:30px;
+}
+h3{
+  color:blue;
+  margin-left:10px
+}
+p{
+  font-size:24px
+}
+.main-box{
+  display:grid;
+  gap:10px;
+  width:100%;
+}
+.main1{
+  grid-area:m1;
+  height:550px;
+ border:1px solid black;
+}
+.main2{
+grid-area:m2;
+  height:550px;
+ border:1px solid black;
+}
+.main3{
+ grid-area:m3;
+  height:550px;
+border:1px solid black;
+}
+.main-box img{
+  width:100%;
+  height:200px;
+}
+@media screen and (max-width:600px){
+  .main-box{
+    grid-template:'m3 m1 m2'
+  }
+}
+@media screen and (min-width:600px){
+  .main-box{
+    grid-template:'m2 m3 m1'
+  }
+}
+@media screen and (min-width:992px){
+  .main-box{
+    grid-template:'m1 m2 m3'
+  }
+}
+#second{
+  width:100%;
+ 
+  height:700px;
+}
+#second div{
+  height:250px;
+  margin-bottom:30px;
+  margin-right:10px;
+  float:left;
+  width:30%;
+  border:1px solid black;
+}
+    </style>
 </head>
 <body>
-    <div>wwwde</div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<h4>CHALLENGES SOLVED WITH SANITY</h4>
+<div class="main-box">
+  <div class="main1">
+    <img src="https://th.thgim.com/news/national/uip3wq/article35811187.ece/ALTERNATES/FREE_960/Monsoon-Session-of-Parliament"/>
+    <h4>Eurostar</h4>
+    <h2>A better digital experience for millions of travellers</h2>
+    <h3>Read case study -></h3>
+  </div>
+   <div class="main2">
+      <img src="https://th.thgim.com/news/national/uip3wq/article35811187.ece/ALTERNATES/FREE_960/Monsoon-Session-of-Parliament"/>
+    <h4>ahm</h4>
+    <h2>Introducing a powerful background for Australia's second largest</h2>
+    <h3>Read case study -></h3>
+   </div>
+   <div class="main3">
+      <img src="https://th.thgim.com/news/national/uip3wq/article35811187.ece/ALTERNATES/FREE_960/Monsoon-Session-of-Parliament"/>
+    <h4>XXL</h4>
+    <h2>Improving time to market for the largest Nordic sports retailer</h2>
+    <h3>Read case study -></h3>
+   </div>
+</div>
+<h4>EXPLORE SOLUTIONS</h4>
+<div id="second">
+  <div class="t1"><h1>Headless CMS</h1>
+    <p>Building cutting experience empowering market-></p>
+  </div>
+  <div class="t2"><h1>Landing page builder</h1>
+    <p>Empower marketers-></p>
+  </div>
+  <div class="t3"><h1>Audience segmentation</h1>
+    <p>Personalize content on space-></p>
+  </div>
+  <div class="t4"><h1>E-commerce</h1>
+    <p>leverage content delevery worflow-></p>
+  </div>
+  <div class="t5"><h1>Editorial workflow</h1>
+    <p>Enhace editorial experience -></p>
+  </div>
+  <div class="t6"><h1>Multi-dataset architecture</h1>
+    <p>Fuel the workflow in the combination-></p>
+  </div>
+  
+</div>
 </body>
 </html>
