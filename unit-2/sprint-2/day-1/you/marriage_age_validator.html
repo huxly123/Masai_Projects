@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="gender-select">Choose a gender:</label>
+    <select name="gender" id="gender-select">
+        <option value="" >Select a gender</option>
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+    </select>
+    <hr/>
+    <label for="Age-select">Year of birth</label>
+    <input id="Age-select" type="text">
+    <button onclick="findd()">Find</button>
+    <script>
+        function findd(){
+            var chumma=document.getElementById('Age-select')
+        var message=document.createElement('p');
+        var year=document.getElementById('Age-select').value;
+var age=2021-year;
+if(age>24){
+    message.textContent="You can marry"
+}else{
+    message.textContent="You can't marry"
+}
+document.body.appendChild(message);
+chumma.value=""
+        }
+    </script>
+</body>
+</html>

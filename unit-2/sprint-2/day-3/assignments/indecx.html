@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="obj()">Object</button>
+    <button onclick="arra()">Array</button>
+    <button onclick=""></button>
+    <button onclick=""></button>
+    <button onclick=""></button>
+    <button onclick=""></button>
+    <button onclick=""></button>
+    <script>
+        function obj(){
+            var message=document.createElement('p');
+            message.textContent="Object is non primitive datatype.Objects are key to understanding object-oriented technology. Look around right now and you'll find many examples of real-world objects: your dog, your desk, your television set, your bicycle."
+document.body.appendChild(message)
+        }
+        function arra(){
+            var message=document.createElement('p');
+            message.textContent="An array is a data structure that contains a group of elements. Typically these elements are all of the same data type, such as an integer or string. Arrays are commonly used in computer programs to organize data so that a related set of values can be easily sorted or searched";
+            document.body.appendChild(message)
+        }
+    </script>
+</body>
+</html>

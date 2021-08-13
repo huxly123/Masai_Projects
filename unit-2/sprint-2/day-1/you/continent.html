@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="continent-select">Country</label>
+    <select id="continent-select" name="country">
+        <option value="">Choose country</option>
+        <option value="India">India</option>
+        <option value="United States of America">United States of America</option>
+        <option value="Australia">Australia</option>
+        <option value="France">France</option>
+    </select>
+    <button onclick="findd()">Find</button>
+<script>
+    function findd(){
+    var country=document.getElementById("continent-select").value;
+    var message=document.createElement('p');
+    switch (country){
+        case "India":
+            message.textContent="Asia";
+            break;
+    case "United States of America":
+        message.textContent="America";
+        break;
+        case "Australia":
+            message.textContent="AUS";
+            break;
+            case "France":
+            message.textContent="Europe";
+            break;
+        default:
+            break;
+    }
+    document.body.appendChild(message);
+}
+</script> 
+</body>
+</html>
