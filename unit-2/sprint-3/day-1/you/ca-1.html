@@ -1,0 +1,18 @@
+<script>
+   function arrayy(){
+     // this.length=arguments.length;
+       for(var i=0;i<arguments.length;i++){
+        
+           this[i]=arguments[i]
+       }
+   }
+   var arr=new arrayy("elena","helena","colana")
+   arrayy.prototype.push=function(e){
+       let index=this.length;
+       this[index]=e;
+   }
+  
+arr.push("khabib");
+console.log("arr:",Object.values(arr));
+console.log("first:",arr[0]);
+</script>

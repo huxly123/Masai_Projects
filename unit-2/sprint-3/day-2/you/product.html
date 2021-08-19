@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        width:50%;
+    }
+    #data{
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20%;
+        grid-gap: 5%;
+    
+    }
+    #data div{
+        display:flex;
+flex-direction: column;
+align-items: center;    }
+</style>
+<body>
+    <h1>Products</h1>
+    <button><a href="carrt.html">Visit cart</a></button>
+    <div id="data"></div>
+    
+    <script>
+       const products=[
+           {
+               name:"Aireal",
+               price:"120",
+               image:"https://m.media-amazon.com/images/I/71Hgb2XtbrL._SL1500_.jpg"
+           },
+           {
+               name:"Pen",
+               price:"100",
+               image:"https://media.istockphoto.com/photos/pen-picture-id1059543698?k=6&m=1059543698&s=612x612&w=0&h=xP1e33j1EAAbfrFvERELOnblyFJ3xjPxbSwmj40Nvco="
+           },
+           {
+               name:"Dettol",
+               price:"130",
+               image:"https://i.pinimg.com/originals/c0/95/b5/c095b5670a7d4d9450cb8ad9313a716f.jpg"
+           },
+           {
+               name:"Hamam",
+               price:"30",
+               image:"https://rukminim1.flixcart.com/image/416/416/j9oiufk0/soap/f/6/z/1-150-soap-hamam-original-imaez6hwz7y7rwxf.jpeg?q=70"
+           },
+           {
+               name:"Lifeboy",
+               price:"50",
+               image:"https://m.media-amazon.com/images/I/91QXtYJOHVL._SX355_.jpg"
+           }
+       ]
+var json_products=JSON.stringify(products);
+localStorage.setItem("myproducts",json_products);
+var myproducts= localStorage.getItem("myproducts");
+myproducts=JSON.parse(myproducts);
+function showw(){
+     var datadiv=document.getElementById("data");
+     
+   myproducts.forEach(function(product){
+    var div=document.createElement("div")
+       var p_name=document.createElement("p");
+       p_name.innerText=product.name;
+     var  p_price=document.createElement("p");
+p_price.innerText=product.price;
+var img=document.createElement('img');
+img.src=product.image;
+let btn=document.createElement('button');
+btn.innerText="Add to cart";
+btn.onclick=function(){
+    addtocart(product);
+};
+div.append(img, p_name,p_price,btn);
+datadiv.append(div)
+   })
+   
+}
+showw();
+if(localStorage.getItem("cart")==undefined){
+localStorage.setItem("cart",JSON.stringify([]))
+}
+function addtocart(p){
+    let cart_data=JSON.parse(localStorage.getItem("cart"));
+    cart_data.push(p);
+    localStorage.setItem("cart",JSON.stringify(cart_data))
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    #total{
+        float: right;
+     
+    }
+</style>
+</head>
+<body>
+    <div id="total"></div>
+  <div id="cart"></div>
+ <input type="text" id="promo">
+ 
+  <button onclick="promo()" id="promoo">Apply promo</button>
+   <script>
+       
+       var products=[
+           {
+               name:"ariel",
+               price:"10",
+           },
+           {
+               name:"ewww",
+               price:"10",
+           },
+           {
+               name:"cvv",
+               price:"10",
+           },
+           {
+               name:"daaal",
+               price:"20",
+           }
+       ]
+
+function promo(){
+var promoo=document.getElementById("promoo");
+var appromo=document.getElementById("promo").value;
+var price_div=document.getElementById("total");
+    var cart_div=document.getElementById("cart");
+if(appromo=="masai30"){
+    products.forEach(function(product){
+      var div=document.createElement("div");
+        var p_name=document.createElement("p");
+        p_name.innerText=product.name;
+var p_price=document.createElement("P");
+var a=+(product.price)*(30/100)
+p_price.innerText=a;
+
+
+div.append(p_name,p_price);
+cart_div.append(div);
+
+
+    })
+}
+
+}
+   </script>
+    
+</body>
+</html>

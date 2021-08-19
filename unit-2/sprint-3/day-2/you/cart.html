@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    #total{
+        float: right;
+     
+    }
+</style>
+</head>
+<body>
+    <div id="total"></div>
+  <div id="cart"></div>
+ 
+  <button onclick="showw()" id="show">Show cart</button>
+   <script>
+       
+       var products=[
+           {
+               name:"ariel",
+               price:"10",
+           },
+           {
+               name:"ewww",
+               price:"10",
+           },
+           {
+               name:"cvv",
+               price:"10",
+           },
+           {
+               name:"daaal",
+               price:"20",
+           }
+       ]
+function showw(){
+    let count=0;
+    let price=0;
+    let price_div=document.getElementById("total");
+    let cart_div=document.getElementById("cart");
+    products.forEach(function(product){
+        let div=document.createElement("div");
+        let p_name=document.createElement("p");
+        p_name.innerText=product.name;
+let p_price=document.createElement("P");
+p_price.innerText=product.price;
+var a=+(product.price)
+price=price+a
+div.append(p_name,p_price);
+cart_div.append(div);
+count++;
+
+    })
+price_div.append("total item-"+ count+"   ")
+price_div.append("total-price-"+price)
+}
+   </script>
+    
+</body>
+</html>

@@ -1,0 +1,14 @@
+<script>
+    var grand={
+        grandfather:"ramesh",
+        grandmother:"rani"
+    }
+console.log("grand:", grand);
+var parent=Object.create(grand);
+parent.father="kanna";
+parent.maother="chunna"
+console.log(parent);
+var son=Object.create(parent);
+son.name="dhoni";
+console.log(son);
+</script>
