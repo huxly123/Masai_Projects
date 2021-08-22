@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+<style>
+   *{
+       padding: 0;
+       margin: 0;
+       text-decoration: none;
+       list-style: none;
+       box-sizing: border-box;
+   }
+   body{
+       font-family: montserrat;
+   }
+   nav{
+       background: blue;
+       height: 80px;
+       width: 100%;
+
+   }
+  .logo{
+       color: white;
+       font-size: 35px;
+       line-height: 80px;
+       padding: 0 100px;
+       font-weight: bold;
+   }
+   nav ul{
+       float: right;
+       margin-right: 20px;
+
+   }
+   nav ul li{
+       display: inline-block;
+       line-height: 80px;
+       margin: 0 15px;
+   }
+   nav ul li a{
+       color: white;
+       font-size: 24px;
+       text-transform: uppercase;
+       border-radius: 3px;
+       padding: 7px 13px;
+   }
+  a:hover,a.active{
+       background: #1b9bff;
+       transition: .5s;
+   }
+
+   body{
+       margin: 0;
+       padding: 0;
+       font-family: sans-serif;
+   }
+.box{
+    width: 300px;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgb(0, 0,0,0.4);
+    text-align: center;
+}
+.box h1{
+color: white;
+text-transform: uppercase;
+font-weight: 700;
+}
+.box input[type="text"],.box input[type="password"]
+{
+    border: 0px;
+background: none;
+display: block;
+margin: 20px auto;
+text-align: center;
+border: 3px solid blue;
+padding: 14px 10px;
+width: 220px;
+outline: none;
+color: white;
+border-radius: 24px;
+transition: 0.25px;
+}
+.box input[type="text"]:focus,.box input[type="password"]:focus{
+    width: 270px;
+border-color: yellow;
+}
+.box input[type="submit"]{
+    border: 0px;
+background: none;
+display: block;
+margin: 20px auto;
+text-align: center;
+border: 3px solid pink;
+padding: 14px 35px;
+cursor: pointer;
+outline: none;
+color: white;
+border-radius: 24px;
+transition: 0.25px;
+
+}
+.box input[type="submit"]:hover{
+    background: yellow;
+    width: 200px;
+}
+button{
+    cursor: pointer;
+    background: chocolate;
+    height: 25px;
+    width: 200px;
+   
+
+}
+
+</style>
+</head>
+<body>
+    <nav>
+<label class="logo">Hotstar</label>
+    <ul>
+        <li><a  href="index.html">Home</a></li>
+        <li><a class="active" href="login.html">Login</a></li>
+        <li><a href="signup.html">Signup</a></li>
+    </ul>
+</nav>
+<div class="box">
+<form action="index.html" method="POST" onsubmit="log(event)" >
+    <h1>Login</h1> 
+<input type="text" name="" placeholder="Enter the username" id="username">
+<input type="password" name="" placeholder="Enter the password" id="password">
+<input type="submit" name="" value="Login" >
+<button><a href="signup.html">Not Existing User?Sign up!!</a></button>
+</form>
+</div>
+<script>
+function log(e){
+    e.preventDefault();
+    
+    var getdata= localStorage.getItem("signup")
+    getdata=JSON.parse(getdata);
+    
+
+var uss=document.getElementById('username').value
+var pass=document.getElementById('password').value
+    if(uss==getdata.username&&pass==getdata.password){
+        alert("Login successfull")
+ window.location='index.html'
+    }else{
+      alert("Invalid credintials")
+    }
+}
+</script>
+</body>
+</html>
