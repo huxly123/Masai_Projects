@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        img{
+            width:50%;
+        }
+        #data{
+            display: grid;
+            grid-template-columns: 25% 25% 25%;
+            grid-gap: 8%;
+        }
+        #data div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button{
+    width: 120px;
+    height: 30px;
+    background-color: orange;
+    color: rebeccapurple;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 30px;
+}
+h1{
+            text-align: center;
+            font-size: 60px;
+            color: rgb(238, 6, 6);
+            background-color: lightcoral;
+        }
+        label{
+            font-size: 30px;
+            color: slateblue;
+        }
+        #coupval{
+            height: 30px;
+        }
+        p{
+    font-size: 30px;
+    color: red;
+    text-align: center;
+}
+img{
+    width: 250px;
+    height: 200px;
+   margin-left: 50px;
+
+}
+    </style>
+    <h1>Cart</h1>
+    <h1 id="total"></h1>
+    <h1 id="coup"></h1>
+    <div id="data"></div>
+    <label>Add coupen code:</label>
+    <input type="text" id="coupval">
+    <br/>
+    <button id="addcou">Add coupen</button>
+    <br>
+    <button ><a href="addr.html">Make Payment</a></button>
+    
+    <script>
+        var Total=0;
+        var tot=document.getElementById("total")
+        let cart_data=JSON.parse(localStorage.getItem("cart"));
+        let data_div=document.getElementById('data');
+       cart_data.forEach(function (product){
+           let div=document.createElement('p');
+           let p_name=document.createElement('p');
+           p_name.innerText=product.name;
+           let p_price=document.createElement('p');
+           p_price.innerHTML=product.price;
+           a=+(product.price);
+           Total=Total+a;
+
+           let img=document.createElement("img");
+               img.src=product.image;
+               div.append(img,p_name,p_price);
+               data_div.append(div)      
+       })
+tot.append("Total is :"+Total);
+var coup=document.getElementById('coup');
+var vall=document.getElementById('coupval').value
+var vallu=(Total*30)/100;
+var btn1=document.getElementById('addcou')
+btn1.onclick=function aa(){
+if(vall='masai30'){
+    alert('coupen code accepted')
+    coup.append("The discounted amount is"+vallu)
+}else{
+    alert('Coupen code is not valid')
+}
+}
+    </script>
+</body>
+</html>

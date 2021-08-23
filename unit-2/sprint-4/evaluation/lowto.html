@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        img{
+            width:50%;
+        }
+        #data{
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20%;
+            grid-gap: 5%;
+        }
+        #data div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1{
+            text-align: center;
+            font-size: 60px;
+            color: rgb(238, 6, 6);
+            background-color: lawngreen;
+        }
+        img{
+    width: 250px;
+    height: 200px;
+}
+p{
+    font-size: 20px;
+    color: red;
+    text-align: center;
+}
+button{
+    width: 200px;
+    height: 50px;
+    background-color: orange;
+    color: rebeccapurple;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 30px;
+}
+    </style>
+    <h1>Low to High</h1>
+    
+    <div id="data"></div>
+    <button><a href="products.html">Filter by brands</a></button>
+    
+    <script>
+    
+    
+        let cart_data=JSON.parse(localStorage.getItem("myproductss"));
+        let data_div=document.getElementById('data');
+       cart_data.forEach(function (product){
+           let div=document.createElement('p');
+           let p_name=document.createElement('p');
+           p_name.innerText=product.name;
+           let p_price=document.createElement('p');
+           p_price.innerHTML=product.price;
+         
+
+           let img=document.createElement("img");
+               img.src=product.image;
+               div.append(img,p_name,p_price);
+               data_div.append(div)      
+       })
+;
+
+    </script>
+</body>
+</html>

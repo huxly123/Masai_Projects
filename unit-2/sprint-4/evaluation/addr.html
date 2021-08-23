@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+    text-align: center;
+    font-size: 60px;
+    color: rgb(209, 20, 20);
+    background-color: pink;
+}
+input[type="text"]{
+    height: 100px;
+    width: 250px;
+}
+label{
+    font-size: 24px;
+    color: palevioletred;
+}
+input[type="submit"]{
+    font-size: 20px;
+    color: green;
+    background-color: hotpink;
+    border-radius: 8px;
+    width: 80px;
+    height: 40px;
+    margin: 10px;
+    padding: 0 20;
+    cursor: pointer;
+
+}
+    </style>
+</head>
+<body>
+    <h1>Add Address</h1>
+    <form onsubmit="eee(event)">
+<label>Add Address:</label>
+<br/>
+<input type="text">
+<br/>
+<input type="submit" value="ADD">
+    </form>
+    <script>
+        function eee(e){
+            e.preventDefault();
+            alert("Address added successfully");
+            window.location=('pay.html')
+        }
+    </script>
+</body>
+</html>
