@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="video" placeholder="search">
+    <button onclick="searchvideos()">submit</button>
+    <div id="videos"></div>
+</body>
+</html>
+<script>
+    let div=document.getElementById("videos");
+    async function searchvideos(){
+let video=document.getElementById("video").value
+let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${video}&type=video&key=AIzaSyAWeUA7XInXBoyuy_BYQNQZ2qtn8H6KLsU&maxResults=20
+
+`)
+let data=await res.json();
+console.log("data:",data);
+
+for({id:{videoId},} of data.items){
+    let video_frame=document.createElement("iframe");
+video_frame.allow="fullscreen"
+    video_frame.src=`https://www.youtube.com/embed/${videoId}`;
+    div.appendChild(video_frame)
+}
+    }
+</script>
+
+
+
+<!--https://youtube.googleapis.com/youtube/v3/search?q=tesla&type=video&key=AIzaSyAWeUA7XInXBoyuy_BYQNQZ2qtn8H6KLsU-->

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+    src="https://kit.fontawesome.com/06e654cff7.js"
+    crossorigin="anonymous"
+  ></script>
+    <title>Youtube</title>
+    <link rel="shortcut icon" href="https://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Youtube-icon.png">
+    <style>
+        body{
+background-color: #424242;
+        }
+        #nav{
+            display: flex;
+        
+            background-color: #424242;
+width: 100%;
+height: 50px;
+
+        }
+        #nav img{
+            height: 100%;
+            width: 200px;
+            padding-left: 34px;
+
+        }
+        #grid{
+            display: grid;
+            grid-template-columns: repeat(4,22%);
+            grid-gap: 0.8%;
+            margin-top: 100px;
+            margin-left: 5%;
+        }
+        #grid iframe{
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        
+<i class="fas fa-list-ul" style="padding-top: 15px;padding-left: 25px;font-size: 26px;"></i>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png">
+
+
+<input placeholder="search for videos" id="search" style="height: 30px;width: 25%;margin-left: 20%;margin-top: 5px;background-color: white;outline: none;">
+<i class="fas fa-search" style="padding-left: 15px;font-size: 24px;padding-top: 10px;cursor: pointer;" onclick="searchvideos()"></i>
+
+    </div>
+    
+    <div id="grid">
+
+    </div>
+</body>
+</html>
+<script>
+ async function searchvideos(){
+    let re=await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=mostPopularinIndia&type=video&key=AIzaSyCDSvqnBF_ci9VFoiDqpnuXJQlDbe5vnOQ&maxResults=20`);
+let dataa=await re.json();
+for(let {id:{videoId}}of dataa.items){
+    let iframe=document.createElement('iframe')
+iframe.src=`https://www.youtube.com/embed/${videoId}`
+iframe.allow="fullscreen"
+videodiv.append(iframe)
+}
+}
+
+    
+
+
+    //`https://youtube.googleapis.com/youtube/v3/search?q=${search}&type=video&key=AIzaSyAWeUA7XInXBoyuy_BYQNQZ2qtn8H6KLsU&maxResults=20`
+</script>

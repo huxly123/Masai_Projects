@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imp</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    async function findcountry(){
+        let res=await fetch("https://restcountries.eu/rest/v2/all")
+let data=await res.json();
+//console.log("data:",data);
+for(let {name,capital,population:hu} of data){
+    //console.log(huxly);
+    //console.log("huxly:",huxly.name,huxly.capital,huxly.population);
+//let {name,capital:thalainagaram,population}=huxly;
+console.log("name:",name);
+console.log("captal::",capital);
+console.log("hu:",hu);
+}
+    }
+    findcountry()
+</script>
