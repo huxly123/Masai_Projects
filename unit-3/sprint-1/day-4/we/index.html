@@ -33,6 +33,7 @@
    async function searchMovies(n){
         let res=await fetch(`http://www.omdbapi.com/?apikey=4e7e0f40&s=${n}`)
     let data=await res.json();
+    console.log(data);
     return data.Search
     }
     function appendMovies(m){

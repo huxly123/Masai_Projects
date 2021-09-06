@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters</title>
+</head>
+<style>
+    body{
+        background-color: hotpink;
+    }
+    #main{
+        width: 20%;
+        height: 250px;
+        margin-top:200px;
+        margin-left: 40%;
+        border: 5px solid purple;
+        border-radius: 15px;
+        animation: blink 2s linear infinite;
+        background-color: grey;
+    }
+    #main div{
+        color: red;
+        font-size: 36px;
+        text-align: center;
+        margin-top: 50px;
+    }
+    #main span{
+        color:gold;
+        margin-left: 20%;
+    font-size: 24px;
+    line-height: 150px;
+    }
+    @keyframes blink{
+        0%{opacity: 0;}
+        50%{opacity: .5;}
+        100%{opacity: 1;}
+    }
+</style>
+<body>
+    <div id="main">
+<div id="name">Name</div>
+<span id="height">Height</span>
+<span id="hair">Haircolor</span>
+    </div>
+</body>
+</html>
+<script>
+    let starwar=localStorage.getItem("starwar");
+    starwar=JSON.parse(starwar);
+    let div=document.getElementById("name")
+    let span1=document.getElementById("height")
+    let span2=document.getElementById("hair")
+    div.innerHTML=starwar.name;
+    span1.innerHTML=starwar.Height;
+    span2.innerHTML=starwar.Haircolor
+
+</script>
