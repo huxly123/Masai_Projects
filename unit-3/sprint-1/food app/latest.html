@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Recipe</title>
+    <style>
+        #main{
+            display: flex;
+            justify-content: space-around;
+            background-color: orangered;
+            
+            height: 100px;
+        }
+        body{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-image: url("https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&dpr=1&w=400");
+background-size: cover;
+    }
+    #main div{
+  
+        font-size: 24px;
+        margin: auto;
+        
+    }
+    a:active{
+       color: red;
+    }
+    h1{
+text-align: center;
+color: yellowgreen;
+    }
+
+    #grid{
+           display: grid;
+           grid-template-columns: repeat(4,21%);
+          margin-left: 5%;
+        overflow-y: auto;
+           grid-gap: 3%;
+           margin-top: 15px;
+       }
+       #grid >div{
+height: 500px;
+background-color: sandybrown;
+       }
+       #grid img{
+           width: 100%;
+           height: 75%;
+       }
+       #grid p{
+           font-size: 24px;
+           color: purple;
+           font-weight: 300;
+           text-align: center;
+           
+       }
+    </style>
+</head>
+<body>
+    <div id="nav"></div>
+    <div id="grid">
+
+    </div>
+</body>
+</html>
+
+<script type="module">
+    let nav=document.getElementById("nav");
+
+    import navbar from "./component/navbar.js"
+nav.innerHTML=navbar()
+</script>
+<script>
+    //https://www.themealdb.com/api/json/v1/1/search.php?s
+    let grid=document.getElementById("grid");
+    async function see(){
+
+let res=await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s`)
+let data =await res.json();
+let b=data.meals
+console.log(b);
+b.forEach(({strMeal,strArea,strMealThumb})=>{
+
+let grid_div=document.createElement('div');
+let grid_img=document.createElement('img');
+let grid_p1=document.createElement('p');
+let grid_p2=document.createElement('p');
+grid_img.src=strMealThumb;
+grid_p1.innerHTML=strMeal;
+grid_p2.innerHTML=strArea;
+grid_div.append(grid_img,grid_p1,grid_p2);
+grid.append(grid_div);
+})
+    }
+    see()
+</script>

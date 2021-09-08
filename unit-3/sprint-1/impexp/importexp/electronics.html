@@ -53,8 +53,10 @@ let div=document.createElement("div");
 div.innerHTML=navbar();
 document.body.prepend(div)
     getdata("https://fakestoreapi.com/products/category/electronics").then((response)=>{
-    let place=document.getElementById("data");
+   
+      let place=document.getElementById("data");
     append(response,place)
 });
   </script>
+
 

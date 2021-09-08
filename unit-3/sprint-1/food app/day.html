@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipie of the day</title>
+    <style>
+        #main{
+            display: flex;
+            justify-content: space-around;
+            background-color: orangered;
+            
+            height: 100px;
+        }
+    #main div{
+  
+        font-size: 24px;
+        margin: auto;
+        
+    }
+    h1{
+text-align: center;
+color: yellowgreen;
+    }
+    body{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-image: url("https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&dpr=1&w=400");
+background-size: cover;
+    }
+    #recepe{
+        height: 700px;
+        width: 60%;
+        margin-left: 20%;
+        border: 1px solid black;
+        background-color: chocolate;
+        margin-top: 50px;
+    }
+    #recepe img{
+        width: 100%;
+        height: 500px;
+
+    }
+    #recepe p{
+        color: crimson;
+        font-size: 32px;
+        text-align: center;font-weight: 700;
+    }
+    </style>
+</head>
+<body>
+    <div id="nav"></div>
+    <div id="recepe"></div>
+</body>
+</html>
+
+<script type="module">
+    //www.themealdb.com/api/json/v1/1/random.php
+    import navbar from "./component/navbar.js"
+    let nav=document.getElementById("nav")
+nav.innerHTML=navbar()
+
+
+
+</script>
+<script>
+    let div=document.getElementById("recepe")
+    async function see(){
+let recepe=document.getElementById("recepe");
+let res=await fetch(`https:/www.themealdb.com/api/json/v1/1/random.php`)
+let data =await res.json();
+console.log(data);
+for({strMeal,strArea,strMealThumb}of data.meals){
+    let grid_img=document.createElement('img');
+let grid_p1=document.createElement('p');
+let grid_p2=document.createElement('p');
+grid_img.src=strMealThumb;
+grid_p1.innerHTML=strMeal;
+grid_p2.innerHTML=strArea;
+div.append(grid_img,grid_p1,grid_p2)
+}
+
+}
+
+see()
+</script>

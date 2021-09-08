@@ -5,14 +5,14 @@ async function getdata(url){
 }
 
 function append(data,place){
-    data.forEach(el=>{
+    data.forEach(({title,image,price})=>{
         let div=document.createElement('div');
         let p_name=document.createElement('p');
         let p_price=document.createElement('p');
         let img=document.createElement('img');
-        img.src=el.image;
-        p_name.innerText=el.title;
-        p_price.innerText=el.price;
+        img.src=image;
+        p_name.innerText=title;
+        p_price.innerText=price;
         div.append(img,p_name,p_price)
         place.append(div)
     })

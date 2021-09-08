@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        #main{
+            display: flex;
+            justify-content: space-around;
+            background-color: orangered;
+            
+            height: 100px;
+        }
+    #main div{
+  
+        font-size: 24px;
+        margin: auto;
+        
+    }
+    h1{
+text-align: center;
+color: yellowgreen;
+    }
+    #alagu{
+        border: 1px solid brown;
+        width:30% ;
+        margin-top:50px ;
+        margin-left: 35%;
+        background-color: burlywood;
+        height: 50px;
+        border: none;
+        border-radius: 20px;
+    }
+    #alagu input{
+        width: 80%;
+        margin-top: 15px;
+        margin-left: 25px;
+background-color: burlywood;
+border: none;
+outline: none;
+    }
+
+    body{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     background-image: url("https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&dpr=1&w=400");
+background-size: cover;
+        }
+       #scroll{
+           overflow-y: auto;
+           width: 30%;
+           height: 400px;
+          border: 1px solid orange;
+           margin-left: 35%;
+       }
+       #scroll p{
+           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+           color: aqua;
+           
+           height: 40px;
+           font-size: 24px;
+           margin: 0;
+           border-radius: 28px;
+           cursor: pointer;
+           text-align: center;
+
+       }
+       #scroll>p:hover{
+           background-color: orangered;
+       }
+       #scroll >p>p{
+           margin-left: 10%;
+          
+           line-height: 10px;
+       }
+       #scroll div{
+           height: 90px;
+           border: 1px solid orangered;
+       }
+       #scroll div:hover{
+           background-color: red;
+       }
+       #grid{
+           display: grid;
+           grid-template-columns: repeat(4,21%);
+          margin-left: 5%;
+        overflow-y: auto;
+           grid-gap: 3%;
+           margin-top: 15px;
+       }
+       #grid >div{
+height: 500px;
+background-color: sandybrown;
+       }
+       #grid img{
+           width: 100%;
+           height: 75%;
+       }
+       #grid p{
+           font-size: 24px;
+           color: purple;
+           font-weight: 300;
+           text-align: center;
+           
+       }
+    </style>
+</head>
+<body>
+    <div id="nav"></div>
+    <div id="alagu">
+        <input type="text" id="input" oninput="debounce(main,1000)" placeholder="Seach for foods">
+    </div>
+    <div id="scroll">
+
+    </div>
+    <div id="grid">
+
+    </div>
+</body>
+</html>
+
+
+<script type="module">
+    //www.themealdb.com/api/json/v1/1/random.php    random
+    //www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata  name
+    //www.themealdb.com/images/ingredients/Lime.png    image
+  
+    import navbar from "./component/navbar.js"
+    let nav=document.getElementById("nav")
+nav.innerHTML=navbar()
+//document.body.prepend(nav)
+
+</script>
+<script>
+    var timerId;
+    var scroll=document.getElementById("scroll")
+
+
+async function search(n){
+    
+    let res=await fetch(`https:/www.themealdb.com/api/json/v1/1/search.php?s=${n}`)
+    let data=await res.json();
+    return data.meals
+//console.log(data.meals);
+}
+
+function append(m){
+    scroll.innerHTML=null;
+    let grid=document.getElementById("grid");
+    m.forEach(({strMeal,strArea,strMealThumb})=>{
+        let divv=document.createElement('div')
+        let p=document.createElement('p');
+        p.innerHTML=strMeal;
+        let p1=document.createElement('p');
+        let img=document.createElement('img');
+        p1.innerHTML=strArea;
+     //   img.src=strMealThumb;
+        divv.append(p,p1);
+        scroll.append(divv)
+        divv.addEventListener("dblclick",()=>{
+
+let grid_div=document.createElement('div');
+let grid_img=document.createElement('img');
+let grid_p1=document.createElement('p');
+let grid_p2=document.createElement('p');
+grid_img.src=strMealThumb;
+grid_p1.innerHTML=strMeal;
+grid_p2.innerHTML=strArea;
+grid_div.append(grid_img,grid_p1,grid_p2);
+grid.append(grid_div);
+console.log(strMealThumb);
+        })
+    })
+}
+
+
+
+
+async function main(){
+    let name=document.getElementById("input").value;
+    let result=await search(name);
+    if(result!=null){
+        append(result);
+        
+    }
+}
+function debounce(fun,delay){
+    let name=document.getElementById("input").value;
+    if(name.length>=1){
+        if(timerId){
+            clearTimeout(timerId)
+        }
+        timerId=setTimeout(()=>{
+            fun()
+        },delay)
+    }
+}
+</script>

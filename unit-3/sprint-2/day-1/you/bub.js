@@ -1,39 +1,24 @@
 
 function runProgram(input) {
 input=input.trim().split("\n");
-var size=+(input[0]);
+var n=+(input[0]);
 var arr=input[1].trim().split(" ").map(Number);
-var obj={};
-var sum=0;
-for(var i=0;i<size;i++){
-    sum=sum+arr[i];
-  
+for(var i=0;i<n-1;i++){
+    for(var j=0;j<n-i-1;j++){
+        if(arr[j]>arr[j+1]){
+            var temp=arr[j];
+            arr[j]=arr[j+1]
+            arr[j+1]=temp
 
-
-    if(arr[i]==0||sum==0){
-        console.log(true); 
+        }
     }
-   
-  var a=Object.values(obj);
-  for(var j=0;j<a.length;j++){
-      if(sum==a[i]){
-          console.log(true);
-          var exist=true;
-          break;
-      }
-  }
-  if(obj[sum]==null){
-    obj[sum]=sum
 }
-}
-if(!exist){
-   console.log(false);
-}console.log(a);
+console.log(arr.join(" "));
 }
 
 if (process.env.USERNAME === 'huxly') {
-  runProgram(`6
-  1 4 -4 1 2 -3`);
+  runProgram(`5
+  3 5 0 9 8`);
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");
