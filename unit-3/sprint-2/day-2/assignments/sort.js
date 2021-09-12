@@ -1,53 +1,40 @@
+function namee(nme,mark){
+  for(var i=0;i<nme.length;i++){
+    for(var j=0;j<nme.length-i-1;j++){
+      if(Compp(nme[j],nme[j+1])>0){
+var temp=nme[j];
+nme[j]=nme[j+1];
+nme[j+1]=temp;
+var temp2=mark[j];
+mark[j]=mark[j+1];
+mark[j+1]=temp2
+      }
+    }
+  }
+  return (nme)
 
+}
+function Compp(a,b){
+for(var i=0;i<Math.min(a.length,b.length);i++){
+  if(a[i]!=b[i]){
+    return a[i]-b[i];
+    break;
+  }
+}
+}
 function runProgram(input) {
 input=input.trim().split("\n");
 var size=+(input[0]);
-var obj={}
-
+var name=[]
+var mark=[]
 for(var i=1;i<=size;i++){
 var dim=input[i].trim().split(" ");
 var nme=dim[0];
-var mark=+(dim[1]);
-if(obj[nme]==null){
-    obj[nme]=mark
+var marks=+(dim[1]);
+name.push(nme)
+mark.push(marks)
 }
-
-}
-var marks=Object.values(obj);
-var sortedmarks=marks.sort();
-var main=[]
-var c=1;
-var count=0
-for(var i=sortedmarks.length-1;i>=0;i--){
-    var aaa=[]
-    for(key in obj){
-if(sortedmarks[i]==obj[key]){
-    
-    
-    aaa.push(c);
-    aaa.push(key);
-    obj[key]=null
-    count++
-    break;
-    }
-    
-
-    }
-    if(sortedmarks[i]==sortedmarks[i-1]){
-        count++
-    }
-    else{
-        c=count
-    }
-    main.push(aaa)
-}
-for(var i=0;i<main.length;i++){
-   var dd=[]
-    for(var j=0;j<main[i].length;j++){
-        dd.push(main[i][j])
-    }
-    console.log(dd.join(" "));
-}
+console.log(namee(name,mark));
 }
 
 if (process.env.USERNAME === 'huxly') {
