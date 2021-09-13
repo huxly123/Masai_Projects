@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #sidebar{
+        border: 1px solid black;
+        width: 15%;
+        height: 900px;
+        background-color: #9E9E9E;
+        position: fixed;
+        float: left;
+    }
+    #sidebar p{
+        font-size: 24px;
+        margin-left: 30%;
+        line-height: 100px;
+        cursor: pointer;
+    }
+    #periyadiv{
+
+width: 60%;
+margin-left: 30%;
+    }
+img{
+    width: 100%;
+}
+p{
+    font-size: 24px;
+}
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+        </style>
+<body>
+    <div id="side"></div>
+<div id="periyadiv">
+    <div id="main">
+       
+            </div>
+        </div>
+</body>
+</html>
+
+<script type="module">
+    import sidebar from "./components/sidebar.js"
+     let side=document.getElementById("side")
+ side.innerHTML=sidebar()
+ </script>
+ 
+ 
+ <script>
+     let main=document.getElementById("main")
+   let news=localStorage.getItem("news");
+    news=JSON.parse(news);
+    let image=document.createElement("img")
+    let author=document.createElement("p")
+    let des=document.createElement("p")
+    let content=document.createElement("p")
+    image.src=news.Image;
+    author.innerHTML=news.author;
+    des.innerHTML=news.description;
+    content.innerHTML=news.content;
+    main.append(image,author,des,content)
+ </script>
