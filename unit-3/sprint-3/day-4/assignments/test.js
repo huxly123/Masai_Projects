@@ -1,89 +1,92 @@
 /*
-[{"first_name":"Hy","last_name":"Knibb","email":"hknibb0@mapquest.com","gender":"Bigender","ip_address":"114.26.63.50","age":1},
-[{"first_name":"Sibylla","last_name":"Izac","email":"sizac1@seattletimes.com","gender":"Genderfluid","ip_address":"157.139.215.64","age":2},
-{"first_name":"Dion","last_name":"Johansson","email":"djohansson2@flickr.com","gender":"Genderqueer","ip_address":"102.17.53.0","age":3},
-{"first_name":"Giacopo","last_name":"Duxfield","email":"gduxfield3@reverbnation.com","gender":"Genderqueer","ip_address":"252.16.29.216","age":4},
-{"first_name":"Dinny","last_name":"Enderlein","email":"denderlein4@feedburner.com","gender":"Polygender","ip_address":"50.74.86.193","age":5},
-{"first_name":"Annelise","last_name":"Scoffham","email":"ascoffham5@buzzfeed.com","gender":"Polygender","ip_address":"158.90.212.234","age":6},
-{"first_name":"Thornton","last_name":"Tureville","email":"ttureville6@zimbio.com","gender":"Female","ip_address":"147.67.178.163","age":7},
-{"first_name":"Ruperta","last_name":"Waples","email":"rwaples7@nymag.com","gender":"Female","ip_address":"141.253.72.124","age":8},
-{"first_name":"Lyon","last_name":"Gelling","email":"lgelling8@uiuc.edu","gender":"Polygender","ip_address":"227.233.117.222","age":9},
-{"first_name":"Ronald","last_name":"Welsby","email":"rwelsby9@senate.gov","gender":"Non-binary","ip_address":"125.158.170.109","age":10}]
+[{"id":1,"movie_name":"Nanny McPhee","movie_genre":"Children|Comedy|Fantasy","production_year":2003,"budget":13710},
+{"id":2,"movie_name":"Navigator, The","movie_genre":"Comedy","production_year":2006,"budget":11917},
+{"id":3,"movie_name":"Ghost from the Machine (Phasma Ex Machina)","movie_genre":"Sci-Fi","production_year":2018,"budget":12062},
+{"id":4,"movie_name":"Vacancy 2: The First Cut","movie_genre":"Horror|Thriller","production_year":1998,"budget":16297},
+{"id":5,"movie_name":"Confessions of a Nazi Spy","movie_genre":"Drama","production_year":2004,"budget":9317},
+{"id":6,"movie_name":"Theatre of Blood","movie_genre":"Comedy|Horror|Mystery","production_year":1998,"budget":18200},
+{"id":7,"movie_name":"Julia and Julia (Giulia e Giulia)","movie_genre":"Drama|Mystery|Thriller","production_year":1996,"budget":19407},
+{"id":8,"movie_name":"In Your Hands (Forbrydelser)","movie_genre":"Drama","production_year":2016,"budget":19126},
+{"id":9,"movie_name":"How to Be a Player","movie_genre":"Comedy","production_year":1994,"budget":18656},
+{"id":10,"movie_name":"I See a Dark Stranger","movie_genre":"Romance|Thriller","production_year":1997,"budget":12357},
+{"id":11,"movie_name":"Confessions (Kokuhaku)","movie_genre":"Drama|Horror","production_year":2002,"budget":12018},
+{"id":12,"movie_name":"Foot Fist Way, The","movie_genre":"Comedy","production_year":2006,"budget":16694},
+{"id":13,"movie_name":"Extreme Measures","movie_genre":"Drama|Thriller","production_year":2001,"budget":12741},
+{"id":14,"movie_name":"Better Than Chocolate","movie_genre":"Comedy|Romance","production_year":1991,"budget":13000},
+{"id":15,"movie_name":"Harry Brown","movie_genre":"Crime|Drama|Thriller","production_year":2001,"budget":12651},
+{"id":16,"movie_name":"Joe's Apartment","movie_genre":"Comedy|Fantasy|Musical","production_year":2009,"budget":10523},
+{"id":17,"movie_name":"Land Before Time III: The Time of the Great Giving","movie_genre":"Adventure|Animation|Children|Musical","production_year":2016,"budget":11898},
+{"id":18,"movie_name":"Honey, We Shrunk Ourselves","movie_genre":"Action|Adventure|Children|Comedy|Sci-Fi","production_year":1999,"budget":15505},
+{"id":19,"movie_name":"What Planet Are You From?","movie_genre":"Comedy|Sci-Fi","production_year":2009,"budget":12392},
+{"id":20,"movie_name":"Fools' Parade","movie_genre":"Comedy|Drama|Thriller","production_year":1994,"budget":18336},
+{"id":21,"movie_name":"Robber, The (Der Räuber)","movie_genre":"Crime|Drama","production_year":1999,"budget":19987},
+{"id":22,"movie_name":"American Werewolf in London, An","movie_genre":"Comedy|Horror|Thriller","production_year":1992,"budget":9337},
+{"id":23,"movie_name":"Hungry Hill","movie_genre":"Drama","production_year":2015,"budget":18190},
+{"id":24,"movie_name":"Seven Girlfriends","movie_genre":"Comedy|Romance","production_year":1998,"budget":19101},
+{"id":25,"movie_name":"Sweetwater","movie_genre":"Thriller|Western","production_year":1994,"budget":18883},
+{"id":26,"movie_name":"Baytown Outlaws, The","movie_genre":"Action|Comedy|Crime","production_year":2011,"budget":9952},
+{"id":27,"movie_name":"About a Boy","movie_genre":"Comedy|Drama|Romance","production_year":2016,"budget":18802},
+{"id":28,"movie_name":"Wild Seven","movie_genre":"Crime|Drama","production_year":1990,"budget":12641},
+{"id":29,"movie_name":"Lipstick","movie_genre":"Drama","production_year":1999,"budget":15108},
+{"id":30,"movie_name":"Lawnmower Man, The","movie_genre":"Action|Horror|Sci-Fi|Thriller","production_year":2006,"budget":13141},
+{"id":31,"movie_name":"Fly Away Home","movie_genre":"Adventure|Children","production_year":1997,"budget":17806},
+{"id":32,"movie_name":"For Your Consideration","movie_genre":"Comedy","production_year":2018,"budget":9445},
+{"id":33,"movie_name":"Paris, France","movie_genre":"Comedy","production_year":2011,"budget":13099},
+{"id":34,"movie_name":"Metalhead (Málmhaus)","movie_genre":"Drama","production_year":2009,"budget":18332},
+{"id":35,"movie_name":"Beowulf","movie_genre":"Action|Horror|Sci-Fi","production_year":1991,"budget":10873},
+{"id":36,"movie_name":"Leadbelly","movie_genre":"Drama","production_year":2010,"budget":19985},
+{"id":37,"movie_name":"Comic Book Confidential","movie_genre":"Documentary","production_year":1992,"budget":14095},
+{"id":38,"movie_name":"Letters to Father Jacob (Postia pappi Jaakobille)","movie_genre":"Drama","production_year":2003,"budget":10618},
+{"id":39,"movie_name":"Raffles","movie_genre":"Adventure|Crime|Drama|Romance|Thriller","production_year":1992,"budget":10307},
+{"id":40,"movie_name":"Meshes of the Afternoon","movie_genre":"Fantasy","production_year":2017,"budget":16157},
+{"id":41,"movie_name":"Monterey Pop","movie_genre":"Documentary|Musical","production_year":2001,"budget":14754},
+{"id":42,"movie_name":"Le convoyeur","movie_genre":"Crime|Drama|Thriller","production_year":1991,"budget":15524},
+{"id":43,"movie_name":"Songs My Brothers Taught Me","movie_genre":"Drama","production_year":2020,"budget":9645},
+{"id":44,"movie_name":"Nest, The (Nid de Guêpes)","movie_genre":"Action|Crime|Thriller","production_year":2005,"budget":13687},
+{"id":45,"movie_name":"Godzilla vs. King Ghidorah (Gojira vs. Kingu Gidorâ)","movie_genre":"Action|Sci-Fi","production_year":1996,"budget":14006},
+{"id":46,"movie_name":"Denise Calls Up","movie_genre":"Comedy","production_year":2010,"budget":15058},
+{"id":47,"movie_name":"Piranha (Piranha 3D)","movie_genre":"Action|Horror|Thriller","production_year":1994,"budget":16385},
+{"id":48,"movie_name":"Hippie Masala - Forever in India","movie_genre":"Documentary","production_year":2011,"budget":9390},
+{"id":49,"movie_name":"Dust","movie_genre":"Drama|Western","production_year":2013,"budget":15197},
+{"id":50,"movie_name":"Charge of the Light Brigade, The","movie_genre":"Drama|War","production_year":1998,"budget":17828},
+{"id":51,"movie_name":"Louise Brooks: Looking for Lulu","movie_genre":"Documentary","production_year":2001,"budget":18666},
+{"id":52,"movie_name":"Century of the Dragon (Long zai bian yuan)","movie_genre":"Crime|Thriller","production_year":2001,"budget":15428},
+{"id":53,"movie_name":"Beautiful Girl","movie_genre":"Drama","production_year":2011,"budget":12222},
+{"id":54,"movie_name":"Summer Holiday","movie_genre":"Musical","production_year":1999,"budget":15675},
+{"id":55,"movie_name":"Strangers on a Train","movie_genre":"Crime|Drama|Film-Noir|Thriller","production_year":2008,"budget":12958},
+{"id":56,"movie_name":"Atomic Twister","movie_genre":"Action|Drama|Sci-Fi","production_year":2015,"budget":19557},
+{"id":57,"movie_name":"Confucian Confusion, A (Du li shi dai)","movie_genre":"Comedy","production_year":1996,"budget":14811},
+{"id":58,"movie_name":"Freeway II: Confessions of a Trickbaby","movie_genre":"Comedy|Crime|Drama|Thriller","production_year":1992,"budget":15847},
+{"id":59,"movie_name":"Fantastic Four: Rise of the Silver Surfer","movie_genre":"Action|Adventure|Sci-Fi","production_year":2018,"budget":18294},
+{"id":60,"movie_name":"Paranormal Activity 4","movie_genre":"Horror|IMAX","production_year":1995,"budget":14275},
+{"id":61,"movie_name":"Home Page","movie_genre":"Documentary","production_year":1996,"budget":16077},
+{"id":62,"movie_name":"Party Monster","movie_genre":"Comedy|Crime|Drama|Thriller","production_year":2008,"budget":11615},
+{"id":63,"movie_name":"Jacqueline Susann's Once Is Not Enough","movie_genre":"Drama|Romance","production_year":2010,"budget":18817},
+{"id":64,"movie_name":"Blind Beast (Môjuu)","movie_genre":"Drama|Thriller","production_year":2014,"budget":17305},
+{"id":65,"movie_name":"Clouds of May (Mayis sikintisi)","movie_genre":"Drama","production_year":1998,"budget":11550},
+{"id":66,"movie_name":"The Day I Saw Your Heart","movie_genre":"Comedy|Drama","production_year":2001,"budget":19467},
+{"id":67,"movie_name":"Love's Deadly Triangle: The Texas Cadet Murder","movie_genre":"Drama","production_year":1999,"budget":18017},
+{"id":68,"movie_name":"Victim","movie_genre":"Horror|Thriller","production_year":1996,"budget":15746},
+{"id":69,"movie_name":"Coonskin","movie_genre":"Animation|Crime|Drama","production_year":2004,"budget":19285},
+{"id":70,"movie_name":"Iron Ladies, The (Satree lek)","movie_genre":"Comedy","production_year":1996,"budget":9701},
+{"id":71,"movie_name":"Girls on the Road (a.k.a. Hot Summer Week)","movie_genre":"Comedy|Drama|Thriller","production_year":2000,"budget":10984},
+{"id":72,"movie_name":"Magnum Cop","movie_genre":"Thriller","production_year":2020,"budget":15049},
+{"id":73,"movie_name":"Rampo (a.k.a. The Mystery of Rampo)","movie_genre":"Drama|Mystery","production_year":2013,"budget":17080},
+{"id":74,"movie_name":"Dark Tower, The","movie_genre":"Drama|Thriller","production_year":1993,"budget":19943},
+{"id":75,"movie_name":"Thirteen Ghosts (a.k.a. Thir13en Ghosts)","movie_genre":"Horror|Thriller","production_year":2018,"budget":10573},
+{"id":76,"movie_name":"Quicksand","movie_genre":"Crime|Drama|Thriller","production_year":2005,"budget":19667},
+{"id":77,"movie_name":"Esther Kahn","movie_genre":"Drama","production_year":2001,"budget":17583},
+{"id":78,"movie_name":"Unconscious (Inconscientes)","movie_genre":"Comedy|Mystery|Romance","production_year":2019,"budget":11670},
+{"id":79,"movie_name":"Unbreakable","movie_genre":"Drama|Sci-Fi","production_year":2018,"budget":13977},
+{"id":80,"movie_name":"Shottas","movie_genre":"Action|Crime|Drama","production_year":1991,"budget":19786},
+{"id":81,"movie_name":"Bluebeard (Barbe Bleue)","movie_genre":"Fantasy","production_year":2017,"budget":10720},
+{"id":82,"movie_name":"Logan's War: Bound by Honor","movie_genre":"Action|Drama|Thriller","production_year":2017,"budget":14230},
+{"id":83,"movie_name":"Hypnotist, The (Hypnotisören)","movie_genre":"Thriller","production_year":1992,"budget":19869},
+{"id":84,"movie_name":"Snake River Desperadoes","movie_genre":"Western","production_year":2015,"budget":9694},
+{"id":85,"movie_name":"What Happened Was...","movie_genre":"Comedy|Drama|Romance|Thriller","production_year":1990,"budget":13268},
+{"id":86,"movie_name":"Fate (Yazgi)","movie_genre":"Drama","production_year":2017,"budget":12646},
+{"id":87,"movie_name":"Muppet Family Christmas, A","movie_genre":"Children|Comedy|Musical","production_year":2018,"budget":19843},
+{"id":88,"movie_name":"Texas Killing Fields","movie_genre":"Crime|Drama|Thriller","production_year":1990,"budget":13617},
+{"id":89,"movie_name":"Avventura, L' (Adventure, The)","movie_genre":"Drama|Mystery|Romance","production_year":2003,"budget":9089}]
 
-
-> show dbs
-admin       0.000GB
-assignment  0.000GB
-config      0.000GB
-local       0.000GB
-> use assignment
-switched to db assignment
-> db.dropDatabase()
-{ "ok" : 1 }
-> use asssignment
-switched to db asssignment
-> db.user.insert({"first_name":"Hy","last_name":"Knibb","email":"hknibb0@mapquest.com","gender":"Bigender","ip_address":"114.26.63.50","age":1})
-WriteResult({ "nInserted" : 1 })
-> show collections
-user
-> db.user.insertMany([{"first_name":"Sibylla","last_name":"Izac","email":"sizac1@seattletimes.com","gender":"Genderfluid","ip_address":"157.139.215.64","age":2},
-... {"first_name":"Dion","last_name":"Johansson","email":"djohansson2@flickr.com","gender":"Genderqueer","ip_address":"102.17.53.0","age":3},
-... {"first_name":"Giacopo","last_name":"Duxfield","email":"gduxfield3@reverbnation.com","gender":"Genderqueer","ip_address":"252.16.29.216","age":4},
-... {"first_name":"Dinny","last_name":"Enderlein","email":"denderlein4@feedburner.com","gender":"Polygender","ip_address":"50.74.86.193","age":5},
-... {"first_name":"Annelise","last_name":"Scoffham","email":"ascoffham5@buzzfeed.com","gender":"Polygender","ip_address":"158.90.212.234","age":6},
-... {"first_name":"Thornton","last_name":"Tureville","email":"ttureville6@zimbio.com","gender":"Female","ip_address":"147.67.178.163","age":7},
-... {"first_name":"Ruperta","last_name":"Waples","email":"rwaples7@nymag.com","gender":"Female","ip_address":"141.253.72.124","age":8},
-... {"first_name":"Lyon","last_name":"Gelling","email":"lgelling8@uiuc.edu","gender":"Polygender","ip_address":"227.233.117.222","age":9},
-... {"first_name":"Ronald","last_name":"Welsby","email":"rwelsby9@senate.gov","gender":"Non-binary","ip_address":"125.158.170.109","age":10}])
-{
-        "acknowledged" : true,
-        "insertedIds" : [
-                ObjectId("61443f91ee783f28b304174b"),
-                ObjectId("61443f91ee783f28b304174c"),
-                ObjectId("61443f91ee783f28b304174d"),
-                ObjectId("61443f91ee783f28b304174e"),
-                ObjectId("61443f91ee783f28b304174f"),
-                ObjectId("61443f91ee783f28b3041750"),
-                ObjectId("61443f91ee783f28b3041751"),
-                ObjectId("61443f91ee783f28b3041752"),
-                ObjectId("61443f91ee783f28b3041753")
-        ]
-}
-> db.user.find({"first_name":"Lyon"}).pretty()
-{
-        "_id" : ObjectId("61443f91ee783f28b3041752"),
-        "first_name" : "Lyon",
-        "last_name" : "Gelling",
-        "email" : "lgelling8@uiuc.edu",
-        "gender" : "Polygender",
-        "ip_address" : "227.233.117.222",
-        "age" : 9
-}
-> db.user.findOne({"gender":"Female"})
-{
-        "_id" : ObjectId("61443f91ee783f28b3041750"),
-        "first_name" : "Thornton",
-        "last_name" : "Tureville",
-        "email" : "ttureville6@zimbio.com",
-        "gender" : "Female",
-        "ip_address" : "147.67.178.163",
-        "age" : 7
-}
-> db.user.update({"first_name":"Ronald"},{$set:{"first_name":"Ronaldo"}})
-WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
-> db.user.updateMany({"first_name":"Ronaldo"},{$set:{"gender":"Male"}})
-{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
-> db.user.remove({"age":10},true)
-WriteResult({ "nRemoved" : 1 })
-> db.user.deleteOne({"ip_address":"114.26.63.50"})
-{ "acknowledged" : true, "deletedCount" : 1 }
-> db.user.deleteMany({"age":9})
-{ "acknowledged" : true, "deletedCount" : 1 }
-> db.dropDatabase()
-{ "ok" : 1 }
-> show dbs
-admin   0.000GB
-config  0.000GB
-local   0.000GB
->
 */
