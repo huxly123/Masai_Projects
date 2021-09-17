@@ -1,0 +1,1367 @@
+Microsoft Windows [Version 10.0.19043.1237]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\huxly>mongo
+MongoDB shell version v5.0.2
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("c5b8fc25-85b9-475e-8f47-b9125def39a2") }
+MongoDB server version: 5.0.2
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+We recommend you begin using "mongosh".
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2021-09-17T11:55:53.346+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+test    0.000GB
+> use test
+switched to db test
+> show collection
+uncaught exception: Error: don't know how to show [collection] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> show collections
+movies
+> db.movies.insertMany([{"id":1,"movie_name":"Nanny McPhee","movie_genre":"Children|Comedy|Fantasy","production_year":2003,"budget":13710},
+... {"id":2,"movie_name":"Navigator, The","movie_genre":"Comedy","production_year":2006,"budget":11917},
+... {"id":3,"movie_name":"Ghost from the Machine (Phasma Ex Machina)","movie_genre":"Sci-Fi","production_year":2018,"budget":12062},
+... {"id":4,"movie_name":"Vacancy 2: The First Cut","movie_genre":"Horror|Thriller","production_year":1998,"budget":16297},
+... {"id":5,"movie_name":"Confessions of a Nazi Spy","movie_genre":"Drama","production_year":2004,"budget":9317},
+... {"id":6,"movie_name":"Theatre of Blood","movie_genre":"Comedy|Horror|Mystery","production_year":1998,"budget":18200},
+... {"id":7,"movie_name":"Julia and Julia (Giulia e Giulia)","movie_genre":"Drama|Mystery|Thriller","production_year":1996,"budget":19407},
+... {"id":8,"movie_name":"In Your Hands (Forbrydelser)","movie_genre":"Drama","production_year":2016,"budget":19126},
+... {"id":9,"movie_name":"How to Be a Player","movie_genre":"Comedy","production_year":1994,"budget":18656},
+... {"id":10,"movie_name":"I See a Dark Stranger","movie_genre":"Romance|Thriller","production_year":1997,"budget":12357},
+... {"id":11,"movie_name":"Confessions (Kokuhaku)","movie_genre":"Drama|Horror","production_year":2002,"budget":12018},
+... {"id":12,"movie_name":"Foot Fist Way, The","movie_genre":"Comedy","production_year":2006,"budget":16694},
+... {"id":13,"movie_name":"Extreme Measures","movie_genre":"Drama|Thriller","production_year":2001,"budget":12741},
+... {"id":14,"movie_name":"Better Than Chocolate","movie_genre":"Comedy|Romance","production_year":1991,"budget":13000},
+... {"id":15,"movie_name":"Harry Brown","movie_genre":"Crime|Drama|Thriller","production_year":2001,"budget":12651},
+... {"id":16,"movie_name":"Joe's Apartment","movie_genre":"Comedy|Fantasy|Musical","production_year":2009,"budget":10523},
+... {"id":17,"movie_name":"Land Before Time III: The Time of the Great Giving","movie_genre":"Adventure|Animation|Children|Musical","production_year":2016,"budget":11898},
+... {"id":18,"movie_name":"Honey, We Shrunk Ourselves","movie_genre":"Action|Adventure|Children|Comedy|Sci-Fi","production_year":1999,"budget":15505},
+... {"id":19,"movie_name":"What Planet Are You From?","movie_genre":"Comedy|Sci-Fi","production_year":2009,"budget":12392},
+... {"id":20,"movie_name":"Fools' Parade","movie_genre":"Comedy|Drama|Thriller","production_year":1994,"budget":18336},
+... {"id":21,"movie_name":"Robber, The (Der Räuber)","movie_genre":"Crime|Drama","production_year":1999,"budget":19987},
+... {"id":22,"movie_name":"American Werewolf in London, An","movie_genre":"Comedy|Horror|Thriller","production_year":1992,"budget":9337},
+... {"id":23,"movie_name":"Hungry Hill","movie_genre":"Drama","production_year":2015,"budget":18190},
+... {"id":24,"movie_name":"Seven Girlfriends","movie_genre":"Comedy|Romance","production_year":1998,"budget":19101},
+... {"id":25,"movie_name":"Sweetwater","movie_genre":"Thriller|Western","production_year":1994,"budget":18883},
+... {"id":26,"movie_name":"Baytown Outlaws, The","movie_genre":"Action|Comedy|Crime","production_year":2011,"budget":9952},
+... {"id":27,"movie_name":"About a Boy","movie_genre":"Comedy|Drama|Romance","production_year":2016,"budget":18802},
+... {"id":28,"movie_name":"Wild Seven","movie_genre":"Crime|Drama","production_year":1990,"budget":12641},
+... {"id":29,"movie_name":"Lipstick","movie_genre":"Drama","production_year":1999,"budget":15108},
+... {"id":30,"movie_name":"Lawnmower Man, The","movie_genre":"Action|Horror|Sci-Fi|Thriller","production_year":2006,"budget":13141},
+... {"id":31,"movie_name":"Fly Away Home","movie_genre":"Adventure|Children","production_year":1997,"budget":17806},
+... {"id":32,"movie_name":"For Your Consideration","movie_genre":"Comedy","production_year":2018,"budget":9445},
+... {"id":33,"movie_name":"Paris, France","movie_genre":"Comedy","production_year":2011,"budget":13099},
+... {"id":34,"movie_name":"Metalhead (Málmhaus)","movie_genre":"Drama","production_year":2009,"budget":18332},
+... {"id":35,"movie_name":"Beowulf","movie_genre":"Action|Horror|Sci-Fi","production_year":1991,"budget":10873},
+... {"id":36,"movie_name":"Leadbelly","movie_genre":"Drama","production_year":2010,"budget":19985},
+... {"id":37,"movie_name":"Comic Book Confidential","movie_genre":"Documentary","production_year":1992,"budget":14095},
+... {"id":38,"movie_name":"Letters to Father Jacob (Postia pappi Jaakobille)","movie_genre":"Drama","production_year":2003,"budget":10618},
+... {"id":39,"movie_name":"Raffles","movie_genre":"Adventure|Crime|Drama|Romance|Thriller","production_year":1992,"budget":10307},
+... {"id":40,"movie_name":"Meshes of the Afternoon","movie_genre":"Fantasy","production_year":2017,"budget":16157},
+... {"id":41,"movie_name":"Monterey Pop","movie_genre":"Documentary|Musical","production_year":2001,"budget":14754},
+... {"id":42,"movie_name":"Le convoyeur","movie_genre":"Crime|Drama|Thriller","production_year":1991,"budget":15524},
+... {"id":43,"movie_name":"Songs My Brothers Taught Me","movie_genre":"Drama","production_year":2020,"budget":9645},
+... {"id":44,"movie_name":"Nest, The (Nid de Guêpes)","movie_genre":"Action|Crime|Thriller","production_year":2005,"budget":13687},
+... {"id":45,"movie_name":"Godzilla vs. King Ghidorah (Gojira vs. Kingu Gidorâ)","movie_genre":"Action|Sci-Fi","production_year":1996,"budget":14006},
+... {"id":46,"movie_name":"Denise Calls Up","movie_genre":"Comedy","production_year":2010,"budget":15058},
+... {"id":47,"movie_name":"Piranha (Piranha 3D)","movie_genre":"Action|Horror|Thriller","production_year":1994,"budget":16385},
+... {"id":48,"movie_name":"Hippie Masala - Forever in India","movie_genre":"Documentary","production_year":2011,"budget":9390},
+... {"id":49,"movie_name":"Dust","movie_genre":"Drama|Western","production_year":2013,"budget":15197},
+... {"id":50,"movie_name":"Charge of the Light Brigade, The","movie_genre":"Drama|War","production_year":1998,"budget":17828},
+... {"id":51,"movie_name":"Louise Brooks: Looking for Lulu","movie_genre":"Documentary","production_year":2001,"budget":18666},
+... {"id":52,"movie_name":"Century of the Dragon (Long zai bian yuan)","movie_genre":"Crime|Thriller","production_year":2001,"budget":15428},
+... {"id":53,"movie_name":"Beautiful Girl","movie_genre":"Drama","production_year":2011,"budget":12222},
+... {"id":54,"movie_name":"Summer Holiday","movie_genre":"Musical","production_year":1999,"budget":15675},
+... {"id":55,"movie_name":"Strangers on a Train","movie_genre":"Crime|Drama|Film-Noir|Thriller","production_year":2008,"budget":12958},
+... {"id":56,"movie_name":"Atomic Twister","movie_genre":"Action|Drama|Sci-Fi","production_year":2015,"budget":19557},
+... {"id":57,"movie_name":"Confucian Confusion, A (Du li shi dai)","movie_genre":"Comedy","production_year":1996,"budget":14811},
+... {"id":58,"movie_name":"Freeway II: Confessions of a Trickbaby","movie_genre":"Comedy|Crime|Drama|Thriller","production_year":1992,"budget":15847},
+... {"id":59,"movie_name":"Fantastic Four: Rise of the Silver Surfer","movie_genre":"Action|Adventure|Sci-Fi","production_year":2018,"budget":18294},
+... {"id":60,"movie_name":"Paranormal Activity 4","movie_genre":"Horror|IMAX","production_year":1995,"budget":14275},
+... {"id":61,"movie_name":"Home Page","movie_genre":"Documentary","production_year":1996,"budget":16077},
+... {"id":62,"movie_name":"Party Monster","movie_genre":"Comedy|Crime|Drama|Thriller","production_year":2008,"budget":11615},
+... {"id":63,"movie_name":"Jacqueline Susann's Once Is Not Enough","movie_genre":"Drama|Romance","production_year":2010,"budget":18817},
+... {"id":64,"movie_name":"Blind Beast (Môjuu)","movie_genre":"Drama|Thriller","production_year":2014,"budget":17305},
+... {"id":65,"movie_name":"Clouds of May (Mayis sikintisi)","movie_genre":"Drama","production_year":1998,"budget":11550},
+... {"id":66,"movie_name":"The Day I Saw Your Heart","movie_genre":"Comedy|Drama","production_year":2001,"budget":19467},
+... {"id":67,"movie_name":"Love's Deadly Triangle: The Texas Cadet Murder","movie_genre":"Drama","production_year":1999,"budget":18017},
+... {"id":68,"movie_name":"Victim","movie_genre":"Horror|Thriller","production_year":1996,"budget":15746},
+... {"id":69,"movie_name":"Coonskin","movie_genre":"Animation|Crime|Drama","production_year":2004,"budget":19285},
+... {"id":70,"movie_name":"Iron Ladies, The (Satree lek)","movie_genre":"Comedy","production_year":1996,"budget":9701},
+... {"id":71,"movie_name":"Girls on the Road (a.k.a. Hot Summer Week)","movie_genre":"Comedy|Drama|Thriller","production_year":2000,"budget":10984},
+... {"id":72,"movie_name":"Magnum Cop","movie_genre":"Thriller","production_year":2020,"budget":15049},
+... {"id":73,"movie_name":"Rampo (a.k.a. The Mystery of Rampo)","movie_genre":"Drama|Mystery","production_year":2013,"budget":17080},
+... {"id":74,"movie_name":"Dark Tower, The","movie_genre":"Drama|Thriller","production_year":1993,"budget":19943},
+... {"id":75,"movie_name":"Thirteen Ghosts (a.k.a. Thir13en Ghosts)","movie_genre":"Horror|Thriller","production_year":2018,"budget":10573},
+... {"id":76,"movie_name":"Quicksand","movie_genre":"Crime|Drama|Thriller","production_year":2005,"budget":19667},
+... {"id":77,"movie_name":"Esther Kahn","movie_genre":"Drama","production_year":2001,"budget":17583},
+... {"id":78,"movie_name":"Unconscious (Inconscientes)","movie_genre":"Comedy|Mystery|Romance","production_year":2019,"budget":11670},
+... {"id":79,"movie_name":"Unbreakable","movie_genre":"Drama|Sci-Fi","production_year":2018,"budget":13977},
+... {"id":80,"movie_name":"Shottas","movie_genre":"Action|Crime|Drama","production_year":1991,"budget":19786},
+... {"id":81,"movie_name":"Bluebeard (Barbe Bleue)","movie_genre":"Fantasy","production_year":2017,"budget":10720},
+... {"id":82,"movie_name":"Logan's War: Bound by Honor","movie_genre":"Action|Drama|Thriller","production_year":2017,"budget":14230},
+... {"id":83,"movie_name":"Hypnotist, The (Hypnotisören)","movie_genre":"Thriller","production_year":1992,"budget":19869},
+... {"id":84,"movie_name":"Snake River Desperadoes","movie_genre":"Western","production_year":2015,"budget":9694},
+... {"id":85,"movie_name":"What Happened Was...","movie_genre":"Comedy|Drama|Romance|Thriller","production_year":1990,"budget":13268},
+... {"id":86,"movie_name":"Fate (Yazgi)","movie_genre":"Drama","production_year":2017,"budget":12646},
+... {"id":87,"movie_name":"Muppet Family Christmas, A","movie_genre":"Children|Comedy|Musical","production_year":2018,"budget":19843},
+... {"id":88,"movie_name":"Texas Killing Fields","movie_genre":"Crime|Drama|Thriller","production_year":1990,"budget":13617},
+... {"id":89,"movie_name":"Avventura, L' (Adventure, The)","movie_genre":"Drama|Mystery|Romance","production_year":2003,"budget":9089}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("6144e0953cc75721c25c4db5"),
+                ObjectId("6144e0953cc75721c25c4db6"),
+                ObjectId("6144e0953cc75721c25c4db7"),
+                ObjectId("6144e0953cc75721c25c4db8"),
+                ObjectId("6144e0953cc75721c25c4db9"),
+                ObjectId("6144e0953cc75721c25c4dba"),
+                ObjectId("6144e0953cc75721c25c4dbb"),
+                ObjectId("6144e0953cc75721c25c4dbc"),
+                ObjectId("6144e0953cc75721c25c4dbd"),
+                ObjectId("6144e0953cc75721c25c4dbe"),
+                ObjectId("6144e0953cc75721c25c4dbf"),
+                ObjectId("6144e0953cc75721c25c4dc0"),
+                ObjectId("6144e0953cc75721c25c4dc1"),
+                ObjectId("6144e0953cc75721c25c4dc2"),
+                ObjectId("6144e0953cc75721c25c4dc3"),
+                ObjectId("6144e0953cc75721c25c4dc4"),
+                ObjectId("6144e0953cc75721c25c4dc5"),
+                ObjectId("6144e0953cc75721c25c4dc6"),
+                ObjectId("6144e0953cc75721c25c4dc7"),
+                ObjectId("6144e0953cc75721c25c4dc8"),
+                ObjectId("6144e0953cc75721c25c4dc9"),
+                ObjectId("6144e0953cc75721c25c4dca"),
+                ObjectId("6144e0953cc75721c25c4dcb"),
+                ObjectId("6144e0953cc75721c25c4dcc"),
+                ObjectId("6144e0953cc75721c25c4dcd"),
+                ObjectId("6144e0953cc75721c25c4dce"),
+                ObjectId("6144e0953cc75721c25c4dcf"),
+                ObjectId("6144e0953cc75721c25c4dd0"),
+                ObjectId("6144e0953cc75721c25c4dd1"),
+                ObjectId("6144e0953cc75721c25c4dd2"),
+                ObjectId("6144e0953cc75721c25c4dd3"),
+                ObjectId("6144e0953cc75721c25c4dd4"),
+                ObjectId("6144e0953cc75721c25c4dd5"),
+                ObjectId("6144e0953cc75721c25c4dd6"),
+                ObjectId("6144e0953cc75721c25c4dd7"),
+                ObjectId("6144e0953cc75721c25c4dd8"),
+                ObjectId("6144e0953cc75721c25c4dd9"),
+                ObjectId("6144e0953cc75721c25c4dda"),
+                ObjectId("6144e0953cc75721c25c4ddb"),
+                ObjectId("6144e0953cc75721c25c4ddc"),
+                ObjectId("6144e0953cc75721c25c4ddd"),
+                ObjectId("6144e0953cc75721c25c4dde"),
+                ObjectId("6144e0953cc75721c25c4ddf"),
+                ObjectId("6144e0953cc75721c25c4de0"),
+                ObjectId("6144e0953cc75721c25c4de1"),
+                ObjectId("6144e0953cc75721c25c4de2"),
+                ObjectId("6144e0953cc75721c25c4de3"),
+                ObjectId("6144e0953cc75721c25c4de4"),
+                ObjectId("6144e0953cc75721c25c4de5"),
+                ObjectId("6144e0953cc75721c25c4de6"),
+                ObjectId("6144e0953cc75721c25c4de7"),
+                ObjectId("6144e0953cc75721c25c4de8"),
+                ObjectId("6144e0953cc75721c25c4de9"),
+                ObjectId("6144e0953cc75721c25c4dea"),
+                ObjectId("6144e0953cc75721c25c4deb"),
+                ObjectId("6144e0953cc75721c25c4dec"),
+                ObjectId("6144e0953cc75721c25c4ded"),
+                ObjectId("6144e0953cc75721c25c4dee"),
+                ObjectId("6144e0953cc75721c25c4def"),
+                ObjectId("6144e0953cc75721c25c4df0"),
+                ObjectId("6144e0953cc75721c25c4df1"),
+                ObjectId("6144e0953cc75721c25c4df2"),
+                ObjectId("6144e0953cc75721c25c4df3"),
+                ObjectId("6144e0953cc75721c25c4df4"),
+                ObjectId("6144e0953cc75721c25c4df5"),
+                ObjectId("6144e0953cc75721c25c4df6"),
+                ObjectId("6144e0953cc75721c25c4df7"),
+                ObjectId("6144e0953cc75721c25c4df8"),
+                ObjectId("6144e0953cc75721c25c4df9"),
+                ObjectId("6144e0953cc75721c25c4dfa"),
+                ObjectId("6144e0953cc75721c25c4dfb"),
+                ObjectId("6144e0953cc75721c25c4dfc"),
+                ObjectId("6144e0953cc75721c25c4dfd"),
+                ObjectId("6144e0953cc75721c25c4dfe"),
+                ObjectId("6144e0953cc75721c25c4dff"),
+                ObjectId("6144e0953cc75721c25c4e00"),
+                ObjectId("6144e0953cc75721c25c4e01"),
+                ObjectId("6144e0953cc75721c25c4e02"),
+                ObjectId("6144e0953cc75721c25c4e03"),
+                ObjectId("6144e0953cc75721c25c4e04"),
+                ObjectId("6144e0953cc75721c25c4e05"),
+                ObjectId("6144e0953cc75721c25c4e06"),
+                ObjectId("6144e0953cc75721c25c4e07"),
+                ObjectId("6144e0953cc75721c25c4e08"),
+                ObjectId("6144e0953cc75721c25c4e09"),
+                ObjectId("6144e0953cc75721c25c4e0a"),
+                ObjectId("6144e0953cc75721c25c4e0b"),
+                ObjectId("6144e0953cc75721c25c4e0c"),
+                ObjectId("6144e0953cc75721c25c4e0d")
+        ]
+}
+> db.movies.find({"movie_name":"How to Be a Player"})
+{ "_id" : ObjectId("6144e0953cc75721c25c4dbd"), "id" : 9, "movie_name" : "How to Be a Player", "movie_genre" : "Comedy", "production_year" : 1994, "budget" : 18656 }
+> db.movies.find({"movie_name":{$not:{$eq:"Nanny McPhee"}}}).pretty()
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db6"),
+        "id" : 2,
+        "movie_name" : "Navigator, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2006,
+        "budget" : 11917
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db7"),
+        "id" : 3,
+        "movie_name" : "Ghost from the Machine (Phasma Ex Machina)",
+        "movie_genre" : "Sci-Fi",
+        "production_year" : 2018,
+        "budget" : 12062
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db8"),
+        "id" : 4,
+        "movie_name" : "Vacancy 2: The First Cut",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 1998,
+        "budget" : 16297
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db9"),
+        "id" : 5,
+        "movie_name" : "Confessions of a Nazi Spy",
+        "movie_genre" : "Drama",
+        "production_year" : 2004,
+        "budget" : 9317
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dba"),
+        "id" : 6,
+        "movie_name" : "Theatre of Blood",
+        "movie_genre" : "Comedy|Horror|Mystery",
+        "production_year" : 1998,
+        "budget" : 18200
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbb"),
+        "id" : 7,
+        "movie_name" : "Julia and Julia (Giulia e Giulia)",
+        "movie_genre" : "Drama|Mystery|Thriller",
+        "production_year" : 1996,
+        "budget" : 19407
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbc"),
+        "id" : 8,
+        "movie_name" : "In Your Hands (Forbrydelser)",
+        "movie_genre" : "Drama",
+        "production_year" : 2016,
+        "budget" : 19126
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbd"),
+        "id" : 9,
+        "movie_name" : "How to Be a Player",
+        "movie_genre" : "Comedy",
+        "production_year" : 1994,
+        "budget" : 18656
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbe"),
+        "id" : 10,
+        "movie_name" : "I See a Dark Stranger",
+        "movie_genre" : "Romance|Thriller",
+        "production_year" : 1997,
+        "budget" : 12357
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbf"),
+        "id" : 11,
+        "movie_name" : "Confessions (Kokuhaku)",
+        "movie_genre" : "Drama|Horror",
+        "production_year" : 2002,
+        "budget" : 12018
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc0"),
+        "id" : 12,
+        "movie_name" : "Foot Fist Way, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2006,
+        "budget" : 16694
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc1"),
+        "id" : 13,
+        "movie_name" : "Extreme Measures",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2001,
+        "budget" : 12741
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc2"),
+        "id" : 14,
+        "movie_name" : "Better Than Chocolate",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1991,
+        "budget" : 13000
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc3"),
+        "id" : 15,
+        "movie_name" : "Harry Brown",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2001,
+        "budget" : 12651
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc4"),
+        "id" : 16,
+        "movie_name" : "Joe's Apartment",
+        "movie_genre" : "Comedy|Fantasy|Musical",
+        "production_year" : 2009,
+        "budget" : 10523
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc5"),
+        "id" : 17,
+        "movie_name" : "Land Before Time III: The Time of the Great Giving",
+        "movie_genre" : "Adventure|Animation|Children|Musical",
+        "production_year" : 2016,
+        "budget" : 11898
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc6"),
+        "id" : 18,
+        "movie_name" : "Honey, We Shrunk Ourselves",
+        "movie_genre" : "Action|Adventure|Children|Comedy|Sci-Fi",
+        "production_year" : 1999,
+        "budget" : 15505
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc7"),
+        "id" : 19,
+        "movie_name" : "What Planet Are You From?",
+        "movie_genre" : "Comedy|Sci-Fi",
+        "production_year" : 2009,
+        "budget" : 12392
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc8"),
+        "id" : 20,
+        "movie_name" : "Fools' Parade",
+        "movie_genre" : "Comedy|Drama|Thriller",
+        "production_year" : 1994,
+        "budget" : 18336
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc9"),
+        "id" : 21,
+        "movie_name" : "Robber, The (Der Räuber)",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 1999,
+        "budget" : 19987
+}
+Type "it" for more
+> db.movies.find({budget:{$gte:15000}}).pretty()
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db8"),
+        "id" : 4,
+        "movie_name" : "Vacancy 2: The First Cut",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 1998,
+        "budget" : 16297
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dba"),
+        "id" : 6,
+        "movie_name" : "Theatre of Blood",
+        "movie_genre" : "Comedy|Horror|Mystery",
+        "production_year" : 1998,
+        "budget" : 18200
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbb"),
+        "id" : 7,
+        "movie_name" : "Julia and Julia (Giulia e Giulia)",
+        "movie_genre" : "Drama|Mystery|Thriller",
+        "production_year" : 1996,
+        "budget" : 19407
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbc"),
+        "id" : 8,
+        "movie_name" : "In Your Hands (Forbrydelser)",
+        "movie_genre" : "Drama",
+        "production_year" : 2016,
+        "budget" : 19126
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbd"),
+        "id" : 9,
+        "movie_name" : "How to Be a Player",
+        "movie_genre" : "Comedy",
+        "production_year" : 1994,
+        "budget" : 18656
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc0"),
+        "id" : 12,
+        "movie_name" : "Foot Fist Way, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2006,
+        "budget" : 16694
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc6"),
+        "id" : 18,
+        "movie_name" : "Honey, We Shrunk Ourselves",
+        "movie_genre" : "Action|Adventure|Children|Comedy|Sci-Fi",
+        "production_year" : 1999,
+        "budget" : 15505
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc8"),
+        "id" : 20,
+        "movie_name" : "Fools' Parade",
+        "movie_genre" : "Comedy|Drama|Thriller",
+        "production_year" : 1994,
+        "budget" : 18336
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc9"),
+        "id" : 21,
+        "movie_name" : "Robber, The (Der Räuber)",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 1999,
+        "budget" : 19987
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dcb"),
+        "id" : 23,
+        "movie_name" : "Hungry Hill",
+        "movie_genre" : "Drama",
+        "production_year" : 2015,
+        "budget" : 18190
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dcc"),
+        "id" : 24,
+        "movie_name" : "Seven Girlfriends",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1998,
+        "budget" : 19101
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dcd"),
+        "id" : 25,
+        "movie_name" : "Sweetwater",
+        "movie_genre" : "Thriller|Western",
+        "production_year" : 1994,
+        "budget" : 18883
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dcf"),
+        "id" : 27,
+        "movie_name" : "About a Boy",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 2016,
+        "budget" : 18802
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dd1"),
+        "id" : 29,
+        "movie_name" : "Lipstick",
+        "movie_genre" : "Drama",
+        "production_year" : 1999,
+        "budget" : 15108
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dd3"),
+        "id" : 31,
+        "movie_name" : "Fly Away Home",
+        "movie_genre" : "Adventure|Children",
+        "production_year" : 1997,
+        "budget" : 17806
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dd6"),
+        "id" : 34,
+        "movie_name" : "Metalhead (Málmhaus)",
+        "movie_genre" : "Drama",
+        "production_year" : 2009,
+        "budget" : 18332
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dd8"),
+        "id" : 36,
+        "movie_name" : "Leadbelly",
+        "movie_genre" : "Drama",
+        "production_year" : 2010,
+        "budget" : 19985
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4ddc"),
+        "id" : 40,
+        "movie_name" : "Meshes of the Afternoon",
+        "movie_genre" : "Fantasy",
+        "production_year" : 2017,
+        "budget" : 16157
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dde"),
+        "id" : 42,
+        "movie_name" : "Le convoyeur",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 1991,
+        "budget" : 15524
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4de2"),
+        "id" : 46,
+        "movie_name" : "Denise Calls Up",
+        "movie_genre" : "Comedy",
+        "production_year" : 2010,
+        "budget" : 15058
+}
+Type "it" for more
+> db.movies.find({budget:{$lte:10000}}).pretty()
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db9"),
+        "id" : 5,
+        "movie_name" : "Confessions of a Nazi Spy",
+        "movie_genre" : "Drama",
+        "production_year" : 2004,
+        "budget" : 9317
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dca"),
+        "id" : 22,
+        "movie_name" : "American Werewolf in London, An",
+        "movie_genre" : "Comedy|Horror|Thriller",
+        "production_year" : 1992,
+        "budget" : 9337
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dce"),
+        "id" : 26,
+        "movie_name" : "Baytown Outlaws, The",
+        "movie_genre" : "Action|Comedy|Crime",
+        "production_year" : 2011,
+        "budget" : 9952
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dd4"),
+        "id" : 32,
+        "movie_name" : "For Your Consideration",
+        "movie_genre" : "Comedy",
+        "production_year" : 2018,
+        "budget" : 9445
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4ddf"),
+        "id" : 43,
+        "movie_name" : "Songs My Brothers Taught Me",
+        "movie_genre" : "Drama",
+        "production_year" : 2020,
+        "budget" : 9645
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4de4"),
+        "id" : 48,
+        "movie_name" : "Hippie Masala - Forever in India",
+        "movie_genre" : "Documentary",
+        "production_year" : 2011,
+        "budget" : 9390
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dfa"),
+        "id" : 70,
+        "movie_name" : "Iron Ladies, The (Satree lek)",
+        "movie_genre" : "Comedy",
+        "production_year" : 1996,
+        "budget" : 9701
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4e08"),
+        "id" : 84,
+        "movie_name" : "Snake River Desperadoes",
+        "movie_genre" : "Western",
+        "production_year" : 2015,
+        "budget" : 9694
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4e0d"),
+        "id" : 89,
+        "movie_name" : "Avventura, L' (Adventure, The)",
+        "movie_genre" : "Drama|Mystery|Romance",
+        "production_year" : 2003,
+        "budget" : 9089
+}
+> db.movies.find({$and:[{production_year:{$gte:2000}},{budget:{$gt:10000}}]}).pretty()
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db5"),
+        "id" : 1,
+        "movie_name" : "Nanny McPhee",
+        "movie_genre" : "Children|Comedy|Fantasy",
+        "production_year" : 2003,
+        "budget" : 13710
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db6"),
+        "id" : 2,
+        "movie_name" : "Navigator, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2006,
+        "budget" : 11917
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db7"),
+        "id" : 3,
+        "movie_name" : "Ghost from the Machine (Phasma Ex Machina)",
+        "movie_genre" : "Sci-Fi",
+        "production_year" : 2018,
+        "budget" : 12062
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbc"),
+        "id" : 8,
+        "movie_name" : "In Your Hands (Forbrydelser)",
+        "movie_genre" : "Drama",
+        "production_year" : 2016,
+        "budget" : 19126
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbf"),
+        "id" : 11,
+        "movie_name" : "Confessions (Kokuhaku)",
+        "movie_genre" : "Drama|Horror",
+        "production_year" : 2002,
+        "budget" : 12018
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc0"),
+        "id" : 12,
+        "movie_name" : "Foot Fist Way, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2006,
+        "budget" : 16694
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc1"),
+        "id" : 13,
+        "movie_name" : "Extreme Measures",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2001,
+        "budget" : 12741
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc3"),
+        "id" : 15,
+        "movie_name" : "Harry Brown",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2001,
+        "budget" : 12651
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc4"),
+        "id" : 16,
+        "movie_name" : "Joe's Apartment",
+        "movie_genre" : "Comedy|Fantasy|Musical",
+        "production_year" : 2009,
+        "budget" : 10523
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc5"),
+        "id" : 17,
+        "movie_name" : "Land Before Time III: The Time of the Great Giving",
+        "movie_genre" : "Adventure|Animation|Children|Musical",
+        "production_year" : 2016,
+        "budget" : 11898
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc7"),
+        "id" : 19,
+        "movie_name" : "What Planet Are You From?",
+        "movie_genre" : "Comedy|Sci-Fi",
+        "production_year" : 2009,
+        "budget" : 12392
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dcb"),
+        "id" : 23,
+        "movie_name" : "Hungry Hill",
+        "movie_genre" : "Drama",
+        "production_year" : 2015,
+        "budget" : 18190
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dcf"),
+        "id" : 27,
+        "movie_name" : "About a Boy",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 2016,
+        "budget" : 18802
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dd2"),
+        "id" : 30,
+        "movie_name" : "Lawnmower Man, The",
+        "movie_genre" : "Action|Horror|Sci-Fi|Thriller",
+        "production_year" : 2006,
+        "budget" : 13141
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dd5"),
+        "id" : 33,
+        "movie_name" : "Paris, France",
+        "movie_genre" : "Comedy",
+        "production_year" : 2011,
+        "budget" : 13099
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dd6"),
+        "id" : 34,
+        "movie_name" : "Metalhead (Málmhaus)",
+        "movie_genre" : "Drama",
+        "production_year" : 2009,
+        "budget" : 18332
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dd8"),
+        "id" : 36,
+        "movie_name" : "Leadbelly",
+        "movie_genre" : "Drama",
+        "production_year" : 2010,
+        "budget" : 19985
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dda"),
+        "id" : 38,
+        "movie_name" : "Letters to Father Jacob (Postia pappi Jaakobille)",
+        "movie_genre" : "Drama",
+        "production_year" : 2003,
+        "budget" : 10618
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4ddc"),
+        "id" : 40,
+        "movie_name" : "Meshes of the Afternoon",
+        "movie_genre" : "Fantasy",
+        "production_year" : 2017,
+        "budget" : 16157
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4ddd"),
+        "id" : 41,
+        "movie_name" : "Monterey Pop",
+        "movie_genre" : "Documentary|Musical",
+        "production_year" : 2001,
+        "budget" : 14754
+}
+Type "it" for more
+> db.movies.find({$or:[{production_year:{$gte:2000}},{budget:{$gt:10000}}]}).pretty()
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db5"),
+        "id" : 1,
+        "movie_name" : "Nanny McPhee",
+        "movie_genre" : "Children|Comedy|Fantasy",
+        "production_year" : 2003,
+        "budget" : 13710
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db6"),
+        "id" : 2,
+        "movie_name" : "Navigator, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2006,
+        "budget" : 11917
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db7"),
+        "id" : 3,
+        "movie_name" : "Ghost from the Machine (Phasma Ex Machina)",
+        "movie_genre" : "Sci-Fi",
+        "production_year" : 2018,
+        "budget" : 12062
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db8"),
+        "id" : 4,
+        "movie_name" : "Vacancy 2: The First Cut",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 1998,
+        "budget" : 16297
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db9"),
+        "id" : 5,
+        "movie_name" : "Confessions of a Nazi Spy",
+        "movie_genre" : "Drama",
+        "production_year" : 2004,
+        "budget" : 9317
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dba"),
+        "id" : 6,
+        "movie_name" : "Theatre of Blood",
+        "movie_genre" : "Comedy|Horror|Mystery",
+        "production_year" : 1998,
+        "budget" : 18200
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbb"),
+        "id" : 7,
+        "movie_name" : "Julia and Julia (Giulia e Giulia)",
+        "movie_genre" : "Drama|Mystery|Thriller",
+        "production_year" : 1996,
+        "budget" : 19407
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbc"),
+        "id" : 8,
+        "movie_name" : "In Your Hands (Forbrydelser)",
+        "movie_genre" : "Drama",
+        "production_year" : 2016,
+        "budget" : 19126
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbd"),
+        "id" : 9,
+        "movie_name" : "How to Be a Player",
+        "movie_genre" : "Comedy",
+        "production_year" : 1994,
+        "budget" : 18656
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbe"),
+        "id" : 10,
+        "movie_name" : "I See a Dark Stranger",
+        "movie_genre" : "Romance|Thriller",
+        "production_year" : 1997,
+        "budget" : 12357
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbf"),
+        "id" : 11,
+        "movie_name" : "Confessions (Kokuhaku)",
+        "movie_genre" : "Drama|Horror",
+        "production_year" : 2002,
+        "budget" : 12018
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc0"),
+        "id" : 12,
+        "movie_name" : "Foot Fist Way, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2006,
+        "budget" : 16694
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc1"),
+        "id" : 13,
+        "movie_name" : "Extreme Measures",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2001,
+        "budget" : 12741
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc2"),
+        "id" : 14,
+        "movie_name" : "Better Than Chocolate",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1991,
+        "budget" : 13000
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc3"),
+        "id" : 15,
+        "movie_name" : "Harry Brown",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2001,
+        "budget" : 12651
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc4"),
+        "id" : 16,
+        "movie_name" : "Joe's Apartment",
+        "movie_genre" : "Comedy|Fantasy|Musical",
+        "production_year" : 2009,
+        "budget" : 10523
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc5"),
+        "id" : 17,
+        "movie_name" : "Land Before Time III: The Time of the Great Giving",
+        "movie_genre" : "Adventure|Animation|Children|Musical",
+        "production_year" : 2016,
+        "budget" : 11898
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc6"),
+        "id" : 18,
+        "movie_name" : "Honey, We Shrunk Ourselves",
+        "movie_genre" : "Action|Adventure|Children|Comedy|Sci-Fi",
+        "production_year" : 1999,
+        "budget" : 15505
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc7"),
+        "id" : 19,
+        "movie_name" : "What Planet Are You From?",
+        "movie_genre" : "Comedy|Sci-Fi",
+        "production_year" : 2009,
+        "budget" : 12392
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc8"),
+        "id" : 20,
+        "movie_name" : "Fools' Parade",
+        "movie_genre" : "Comedy|Drama|Thriller",
+        "production_year" : 1994,
+        "budget" : 18336
+}
+Type "it" for more
+> db.movies.find({$not:[{production_year:{$gte:2000}},{budget:{$gt:10000}}]}).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown top level operator: $not. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.movies.find({$nor:[{production_year:{$gte:2000}},{budget:{$gt:10000}}]}).pretty()
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dca"),
+        "id" : 22,
+        "movie_name" : "American Werewolf in London, An",
+        "movie_genre" : "Comedy|Horror|Thriller",
+        "production_year" : 1992,
+        "budget" : 9337
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dfa"),
+        "id" : 70,
+        "movie_name" : "Iron Ladies, The (Satree lek)",
+        "movie_genre" : "Comedy",
+        "production_year" : 1996,
+        "budget" : 9701
+}
+> db.movies.find({$not:[{production_year:{$eq:2000}},{budget:{$eq:10000}}]}).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown top level operator: $not. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.movies.find({$nor:[{production_year:{$eq:2000}},{budget:{$eq:10000}}]}).pretty()
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db5"),
+        "id" : 1,
+        "movie_name" : "Nanny McPhee",
+        "movie_genre" : "Children|Comedy|Fantasy",
+        "production_year" : 2003,
+        "budget" : 13710
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db6"),
+        "id" : 2,
+        "movie_name" : "Navigator, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2006,
+        "budget" : 11917
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db7"),
+        "id" : 3,
+        "movie_name" : "Ghost from the Machine (Phasma Ex Machina)",
+        "movie_genre" : "Sci-Fi",
+        "production_year" : 2018,
+        "budget" : 12062
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db8"),
+        "id" : 4,
+        "movie_name" : "Vacancy 2: The First Cut",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 1998,
+        "budget" : 16297
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db9"),
+        "id" : 5,
+        "movie_name" : "Confessions of a Nazi Spy",
+        "movie_genre" : "Drama",
+        "production_year" : 2004,
+        "budget" : 9317
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dba"),
+        "id" : 6,
+        "movie_name" : "Theatre of Blood",
+        "movie_genre" : "Comedy|Horror|Mystery",
+        "production_year" : 1998,
+        "budget" : 18200
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbb"),
+        "id" : 7,
+        "movie_name" : "Julia and Julia (Giulia e Giulia)",
+        "movie_genre" : "Drama|Mystery|Thriller",
+        "production_year" : 1996,
+        "budget" : 19407
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbc"),
+        "id" : 8,
+        "movie_name" : "In Your Hands (Forbrydelser)",
+        "movie_genre" : "Drama",
+        "production_year" : 2016,
+        "budget" : 19126
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbd"),
+        "id" : 9,
+        "movie_name" : "How to Be a Player",
+        "movie_genre" : "Comedy",
+        "production_year" : 1994,
+        "budget" : 18656
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbe"),
+        "id" : 10,
+        "movie_name" : "I See a Dark Stranger",
+        "movie_genre" : "Romance|Thriller",
+        "production_year" : 1997,
+        "budget" : 12357
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbf"),
+        "id" : 11,
+        "movie_name" : "Confessions (Kokuhaku)",
+        "movie_genre" : "Drama|Horror",
+        "production_year" : 2002,
+        "budget" : 12018
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc0"),
+        "id" : 12,
+        "movie_name" : "Foot Fist Way, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2006,
+        "budget" : 16694
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc1"),
+        "id" : 13,
+        "movie_name" : "Extreme Measures",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2001,
+        "budget" : 12741
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc2"),
+        "id" : 14,
+        "movie_name" : "Better Than Chocolate",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1991,
+        "budget" : 13000
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc3"),
+        "id" : 15,
+        "movie_name" : "Harry Brown",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2001,
+        "budget" : 12651
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc4"),
+        "id" : 16,
+        "movie_name" : "Joe's Apartment",
+        "movie_genre" : "Comedy|Fantasy|Musical",
+        "production_year" : 2009,
+        "budget" : 10523
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc5"),
+        "id" : 17,
+        "movie_name" : "Land Before Time III: The Time of the Great Giving",
+        "movie_genre" : "Adventure|Animation|Children|Musical",
+        "production_year" : 2016,
+        "budget" : 11898
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc6"),
+        "id" : 18,
+        "movie_name" : "Honey, We Shrunk Ourselves",
+        "movie_genre" : "Action|Adventure|Children|Comedy|Sci-Fi",
+        "production_year" : 1999,
+        "budget" : 15505
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc7"),
+        "id" : 19,
+        "movie_name" : "What Planet Are You From?",
+        "movie_genre" : "Comedy|Sci-Fi",
+        "production_year" : 2009,
+        "budget" : 12392
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc8"),
+        "id" : 20,
+        "movie_name" : "Fools' Parade",
+        "movie_genre" : "Comedy|Drama|Thriller",
+        "production_year" : 1994,
+        "budget" : 18336
+}
+Type "it" for more
+> db.movies.find({nor:[{production_year:{$lt:2000}},{budget:{$eq:10000}}]}).pretty()
+> db.movies.find({nor:[{production_year:{$lt:2000}},{production_year:{$gt:2010}}]}).pretty()
+> db.movies.find().sort({$and[{production_year:1},{movie_name:1}]})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:27
+> db.movies.find({$nor:[{production_year:{$lt:2000}},{budget:{$eq:10000}}]}).pretty()
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db5"),
+        "id" : 1,
+        "movie_name" : "Nanny McPhee",
+        "movie_genre" : "Children|Comedy|Fantasy",
+        "production_year" : 2003,
+        "budget" : 13710
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db6"),
+        "id" : 2,
+        "movie_name" : "Navigator, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2006,
+        "budget" : 11917
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db7"),
+        "id" : 3,
+        "movie_name" : "Ghost from the Machine (Phasma Ex Machina)",
+        "movie_genre" : "Sci-Fi",
+        "production_year" : 2018,
+        "budget" : 12062
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4db9"),
+        "id" : 5,
+        "movie_name" : "Confessions of a Nazi Spy",
+        "movie_genre" : "Drama",
+        "production_year" : 2004,
+        "budget" : 9317
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbc"),
+        "id" : 8,
+        "movie_name" : "In Your Hands (Forbrydelser)",
+        "movie_genre" : "Drama",
+        "production_year" : 2016,
+        "budget" : 19126
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dbf"),
+        "id" : 11,
+        "movie_name" : "Confessions (Kokuhaku)",
+        "movie_genre" : "Drama|Horror",
+        "production_year" : 2002,
+        "budget" : 12018
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc0"),
+        "id" : 12,
+        "movie_name" : "Foot Fist Way, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2006,
+        "budget" : 16694
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc1"),
+        "id" : 13,
+        "movie_name" : "Extreme Measures",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2001,
+        "budget" : 12741
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc3"),
+        "id" : 15,
+        "movie_name" : "Harry Brown",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2001,
+        "budget" : 12651
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc4"),
+        "id" : 16,
+        "movie_name" : "Joe's Apartment",
+        "movie_genre" : "Comedy|Fantasy|Musical",
+        "production_year" : 2009,
+        "budget" : 10523
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc5"),
+        "id" : 17,
+        "movie_name" : "Land Before Time III: The Time of the Great Giving",
+        "movie_genre" : "Adventure|Animation|Children|Musical",
+        "production_year" : 2016,
+        "budget" : 11898
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dc7"),
+        "id" : 19,
+        "movie_name" : "What Planet Are You From?",
+        "movie_genre" : "Comedy|Sci-Fi",
+        "production_year" : 2009,
+        "budget" : 12392
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dcb"),
+        "id" : 23,
+        "movie_name" : "Hungry Hill",
+        "movie_genre" : "Drama",
+        "production_year" : 2015,
+        "budget" : 18190
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dce"),
+        "id" : 26,
+        "movie_name" : "Baytown Outlaws, The",
+        "movie_genre" : "Action|Comedy|Crime",
+        "production_year" : 2011,
+        "budget" : 9952
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dcf"),
+        "id" : 27,
+        "movie_name" : "About a Boy",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 2016,
+        "budget" : 18802
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dd2"),
+        "id" : 30,
+        "movie_name" : "Lawnmower Man, The",
+        "movie_genre" : "Action|Horror|Sci-Fi|Thriller",
+        "production_year" : 2006,
+        "budget" : 13141
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dd4"),
+        "id" : 32,
+        "movie_name" : "For Your Consideration",
+        "movie_genre" : "Comedy",
+        "production_year" : 2018,
+        "budget" : 9445
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dd5"),
+        "id" : 33,
+        "movie_name" : "Paris, France",
+        "movie_genre" : "Comedy",
+        "production_year" : 2011,
+        "budget" : 13099
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dd6"),
+        "id" : 34,
+        "movie_name" : "Metalhead (Málmhaus)",
+        "movie_genre" : "Drama",
+        "production_year" : 2009,
+        "budget" : 18332
+}
+{
+        "_id" : ObjectId("6144e0953cc75721c25c4dd8"),
+        "id" : 36,
+        "movie_name" : "Leadbelly",
+        "movie_genre" : "Drama",
+        "production_year" : 2010,
+        "budget" : 19985
+}
+Type "it" for more
+>  db.users.aggregate(
+...    [
+...      { $sort : { age : -1, posts: 1 } }
+...    ]
+...
+... db
+... db.movies.aggregate([{$sort:{production_year:1,movie_name:1}}])
+... show dbs
+... mongo
+...   t
+... it
+... ^C
+
+> db.movies.aggregate([{$sort:{production_year:1,movie_name:1}}])
+{ "_id" : ObjectId("6144e0953cc75721c25c4e0c"), "id" : 88, "movie_name" : "Texas Killing Fields", "movie_genre" : "Crime|Drama|Thriller", "production_year" : 1990, "budget" : 13617 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4e09"), "id" : 85, "movie_name" : "What Happened Was...", "movie_genre" : "Comedy|Drama|Romance|Thriller", "production_year" : 1990, "budget" : 13268 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4dd0"), "id" : 28, "movie_name" : "Wild Seven", "movie_genre" : "Crime|Drama", "production_year" : 1990, "budget" : 12641 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4dd7"), "id" : 35, "movie_name" : "Beowulf", "movie_genre" : "Action|Horror|Sci-Fi", "production_year" : 1991, "budget" : 10873 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4dc2"), "id" : 14, "movie_name" : "Better Than Chocolate", "movie_genre" : "Comedy|Romance", "production_year" : 1991, "budget" : 13000 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4dde"), "id" : 42, "movie_name" : "Le convoyeur", "movie_genre" : "Crime|Drama|Thriller", "production_year" : 1991, "budget" : 15524 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4e04"), "id" : 80, "movie_name" : "Shottas", "movie_genre" : "Action|Crime|Drama", "production_year" : 1991, "budget" : 19786 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4dca"), "id" : 22, "movie_name" : "American Werewolf in London, An", "movie_genre" : "Comedy|Horror|Thriller", "production_year" : 1992, "budget" : 9337 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4dd9"), "id" : 37, "movie_name" : "Comic Book Confidential", "movie_genre" : "Documentary", "production_year" : 1992, "budget" : 14095 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4dee"), "id" : 58, "movie_name" : "Freeway II: Confessions of a Trickbaby", "movie_genre" : "Comedy|Crime|Drama|Thriller", "production_year" : 1992, "budget" : 15847 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4e07"), "id" : 83, "movie_name" : "Hypnotist, The (Hypnotisören)", "movie_genre" : "Thriller", "production_year" : 1992, "budget" : 19869 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4ddb"), "id" : 39, "movie_name" : "Raffles", "movie_genre" : "Adventure|Crime|Drama|Romance|Thriller", "production_year" : 1992, "budget" : 10307 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4dfe"), "id" : 74, "movie_name" : "Dark Tower, The", "movie_genre" : "Drama|Thriller", "production_year" : 1993, "budget" : 19943 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4dc8"), "id" : 20, "movie_name" : "Fools' Parade", "movie_genre" : "Comedy|Drama|Thriller", "production_year" : 1994, "budget" : 18336 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4dbd"), "id" : 9, "movie_name" : "How to Be a Player", "movie_genre" : "Comedy", "production_year" : 1994, "budget" : 18656 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4de3"), "id" : 47, "movie_name" : "Piranha (Piranha 3D)", "movie_genre" : "Action|Horror|Thriller", "production_year" : 1994, "budget" : 16385 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4dcd"), "id" : 25, "movie_name" : "Sweetwater", "movie_genre" : "Thriller|Western", "production_year" : 1994, "budget" : 18883 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4df0"), "id" : 60, "movie_name" : "Paranormal Activity 4", "movie_genre" : "Horror|IMAX", "production_year" : 1995, "budget" : 14275 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4ded"), "id" : 57, "movie_name" : "Confucian Confusion, A (Du li shi dai)", "movie_genre" : "Comedy", "production_year" : 1996, "budget" : 14811 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4de1"), "id" : 45, "movie_name" : "Godzilla vs. King Ghidorah (Gojira vs. Kingu Gidorâ)", "movie_genre" : "Action|Sci-Fi", "production_year" : 1996, "budget" : 14006 }
+Type "it" for more
+> db.movies.aggregate([{$sort:{production_year:1,movie_name:1}}]).skip(10).limit(5).pretty()
+uncaught exception: TypeError: db.movies.aggregate(...).skip is not a function :
+@(shell):1:1
+> db.movies.aggregate([{$sort:{production_year:1,movie_name:1}}].skip(10).limit(5).pretty())
+uncaught exception: TypeError: [...].skip is not a function :
+@(shell):1:21
+> db.movies.aggregate([{$sort:{production_year:1,movie_name:1}}]).find().limit((10)
+... db.movies.aggregate([{$sort:{production_year:1,movie_name:1}}]).find()
+... db.movies.aggregate([{$sort:{production_year:1,movie_name:1}}])
+... ^C
+
+> db.movies.aggregate([{$sort:{production_year:1,movie_name:1}}]).find()
+uncaught exception: TypeError: db.movies.aggregate(...).find is not a function :
+@(shell):1:1
+> db.movies.aggregate([{$sort:{production_year:1,movie_name:1}},{$skip:10},{$limit:5}])
+{ "_id" : ObjectId("6144e0953cc75721c25c4e07"), "id" : 83, "movie_name" : "Hypnotist, The (Hypnotisören)", "movie_genre" : "Thriller", "production_year" : 1992, "budget" : 19869 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4ddb"), "id" : 39, "movie_name" : "Raffles", "movie_genre" : "Adventure|Crime|Drama|Romance|Thriller", "production_year" : 1992, "budget" : 10307 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4dfe"), "id" : 74, "movie_name" : "Dark Tower, The", "movie_genre" : "Drama|Thriller", "production_year" : 1993, "budget" : 19943 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4dc8"), "id" : 20, "movie_name" : "Fools' Parade", "movie_genre" : "Comedy|Drama|Thriller", "production_year" : 1994, "budget" : 18336 }
+{ "_id" : ObjectId("6144e0953cc75721c25c4dbd"), "id" : 9, "movie_name" : "How to Be a Player", "movie_genre" : "Comedy", "production_year" : 1994, "budget" : 18656 }
+>
