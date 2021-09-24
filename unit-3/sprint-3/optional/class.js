@@ -28,7 +28,7 @@ for(j=0;j<arr.length;j++){
     }
 }
 if(stack.length!=0&&exists==true){
-    console.log("not balanced",i);
+  console.log("not balanced",i);
 }
  //if(exists==true){
    // console.log("balanced",i);

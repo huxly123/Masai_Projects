@@ -46,22 +46,22 @@ for(let i=1;i<=cases;i++){
     }
 else if(q[0]==='D'){
     if(rollQue[0]==='1'){
-        if(!que1[fr1]!==undefined){
+        if(que1[fr1]!==undefined){
             console.log(1,que1[fr1++]);
         }
     }
        else if(rollQue[0]==='2'){
-           if(!que2[fr2!==undefined]){
+           if(que2[fr2]!==undefined){
                console.log(2,que2[fr2++]);
            }
        }
        else if(rollQue[0]==='3'){
-        if(!que3[fr3!==undefined]){
+        if(que3[fr3]!==undefined){
             console.log(3,que3[fr3++]);
         }
     }
     else if(rollQue[0]==='4'){
-        if(!que4[fr4!==undefined]){
+        if(que4[fr4]!==undefined){
             console.log(4,que4[fr4++]);
         }
     }
@@ -91,7 +91,7 @@ if(fr4===bk4){
 if (process.env.USERNAME === 'huxly') {
   runProgram(`5
   E 1 1
-  E 2 1
+  E 4 1
   E 1 2
   D
   D`);
