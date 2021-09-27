@@ -1,33 +1,37 @@
 
 function runProgram(input) {
-input=input.trim().split("\n");
-let cases=+(input[0]);
 
 
-for(let p=1;p<=cases;p++){
+
+
     let stack=[];
-    var exist=true
-    let arr=input[p].trim().split("")
+    var exist=true;
+    let arr=input.trim().split("")
     for(let i=0;i<arr.length;i++){
         if(arr[0]=="}"||arr[0]=="]"||arr[0]==")"){
             console.log("not balanced");
-            exist=false
+            exist=false;
             break;
         }
         if(arr[i]=="{"||arr[i]=="["||arr[i]=="("){
-stack.push(arr[i])
+stack.push(arr[i]);
         }
         if(arr[i]=="}"&&stack[stack.length-1]=="{"||arr[i]=="]"&&stack[stack.length-1]=="["||arr[i]==")"&&stack[stack.length-1]=="("){
-            stack.pop()
+            stack.pop();
         }
+        if(arr[i]=="}"&&stack[stack.length-1]!="{"||arr[i]=="]"&&stack[stack.length-1]!="["||arr[i]==")"&&stack[stack.length-1]!="("){
+         console.log("unbalaced");
+         exist=false;
+         break;
+      }
     }
-if(stack.length!=0&&exist==true){
+if(stack.length!=0&&exist===true){
     console.log("not balanced");
 }
-if(stack.length==0&&exist==true){
+if(stack.length==0&&exist===true){
     console.log("balanced");
 }
-}
+
 
 
 }
