@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate App</title>
+
+    <style>
+        #container {
+            width: 90%;
+            margin: auto;
+        }
+        #box{
+            margin: auto;
+            display: flex;
+            padding-left: 30%;
+        }
+
+        #input_div{
+            flex-basis: 28%;
+            height: 200px;
+        }
+      #write{
+           width: 95%;
+          border: 1px solid red;
+          height: 100%;
+      }
+
+      #translated{
+        flex-basis: 28%;
+          border: 1px solid red;
+          height: 200px;
+      }
+
+      #select{
+        margin-left:  40%;
+        margin-bottom: 20px;
+        }
+    
+      #all_button {
+        width: 30%;
+        display: flex;
+        gap:10px;
+        padding-left: 35%;
+      }
+      
+    </style>
+</head>
+<body>
+    <div id="container">
+    <select id="select" onchange="changeLang()">
+     <option>--Change language--</option>
+        
+    </select>
+    <div id="box">
+        <div id="input_div">
+     <input type="text" id="write" />
+    </div>
+    <div id="translated"></div>
+  
+</div>
+<div id="all_button">
+<button onclick="record()">Tap to Speak</button>
+<button onclick="translateIt()">Translate</button>
+<button onclick = "speak()">Speak Out</button>
+</div>
+</div>
+</body>
+</html>
+
+<script>
+
+  // fetching the all supported languages
+    async function getData (){
+        let res = await fetch('https://libretranslate.de/languages');
+       let data = await res.json();
+     //  console.log(data)
+      return data;
+    }
+    
+   
+
+   // appending all supported language on the web page
+ let language_supported = getData().then((res)=>{
+    res.forEach((el)=>{
+       // console.log(el)
+      let option = document.createElement("option");
+      option.innerHTML = el.name;
+      select.append(option)
+    })
+ });
+ 
+   function changeLang(){
+   
+    let select = document.getElementById("select");
+     let x =  select.options[select.selectedIndex].text;
+  // 
+
+ 
+   return x;
+     
+   }
+
+
+   async function translateIt() {
+
+     let get_supported_lang = await getData();
+
+    // console.log(get_supported_lang)
+    let y  = changeLang();
+  // console.log(y);
+
+     for(let i = 0; i < get_supported_lang.length; i++){
+       if(get_supported_lang[i].name == y){
+         y = get_supported_lang[i].code;
+       }
+     }
+    
+    let input = document.getElementById("write").value;
+   // console.log(input);
+
+   const res = await fetch("https://libretranslate.de/translate", {
+	method: "POST",
+	body: JSON.stringify({
+		q: input,
+		source: "en",
+		target: y,
+	}),
+	headers: { "Content-Type": "application/json" }
+});
+
+let data = await res.json();
+
+//console.log(data)
+ 
+let display = document.getElementById("translated").innerText = data.translatedText
+
+
+   }
+ 
+   function record (){
+     let recognition = new webkitSpeechRecognition();
+     recognition.lang = "en-GB";
+      recognition.onresult = function (event){
+      //  console.log(event);
+
+        document.getElementById("write").value = event.results[0][0].transcript;
+      }
+
+      recognition.start();
+   }
+
+
+ async function speak (){
+
+  var txt = document.getElementById("translated").innerText;
+  let y  = changeLang();
+ // console.log(y)
+
+  var fetched_data = await getData ();
+  console.log(fetched_data);
+   
+  for(let i = 0; i < fetched_data.length; i++){
+    if(fetched_data[i].name == y){
+      y = fetched_data[i].code;
+    }
+  }
+  
+  let speech = new SpeechSynthesisUtterance();
+   speech.lang = y;
+
+   speech.text = txt;
+   speech.rate = 1;
+   speech.volume=1;
+   speech.pitch=1;
+   speechSynthesis.speak(speech)
+
+  console.log(txt)
+}
+</script>
