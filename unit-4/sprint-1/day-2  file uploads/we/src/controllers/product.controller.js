@@ -8,17 +8,18 @@ router.get("/new",(req,res)=>{
 })
 
 router.post("/single",upload.single("productImages"),async (req,res)=>{
-    console.log(req.file.path);
+ //   console.log(req.file);
     const product=await Product.create({
         title:req.body.title,
         price:req.body.price,
         img_urls:req.file.path
     })
-console.log(product,17);
+
     res.status(200).send(product)
 })
 
 router.post("/multiple",upload.any("productImages"),async (req,res)=>{
+  //  console.log(req.files);
    const filePaths=req.files.map(file=>file.path)
    const product=await Product.create({
     title:req.body.title,
