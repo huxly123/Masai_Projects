@@ -15,7 +15,7 @@ sendMail({
   from:"acb@abc.com",
   to:"wewrf@wfd.com",
   subject:"Message title",
-  text:"plain text",
+  text:"welcomeee",
   html:path.join(__dirname,"../html/name.html"),
   path:path.join(__dirname,"../file/name.txt")
 })
