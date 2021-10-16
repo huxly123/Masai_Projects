@@ -7,17 +7,17 @@ const html=fs.createReadStream(path.join(__dirname,"../html/name.html"));
 
 
 
-module.exports=(({from,to,subject,text,path})=>{
+module.exports=((message)=>{
 
 var message={
-    from:from,
-    to:to,
-    subject:subject,
-    text:text,
+    from:message.from,
+    to:message.to,
+    subject:message.subject,
+    text:message.text,
     html:html,
     attachments:[{
         filename:"name.txt",
-        path:path
+        path:message.path
     }]
   }
   
