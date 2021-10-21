@@ -1,0 +1,29 @@
+body{
+    font-family: sans-serif;
+    background-color: #E0E0E0;
+}
+#inp{
+    width:25%;
+    height: 25px;
+    border-radius: 10px;
+    border: none;
+}
+#main-div div{
+   margin-bottom: 20px;
+    width: 25%;
+    background-color: white;
+    border-radius: 12px;
+    height: 10px;
+    padding: 10px;
+}
+
+#main-div button{
+    padding: 5px;
+    width: 3%;
+    border: none;
+    margin-left: 1%;
+}
+#main-div{
+    margin-top: 400px;
+    margin-left: 40%;
+}
