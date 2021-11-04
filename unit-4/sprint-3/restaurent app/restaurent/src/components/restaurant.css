@@ -4,7 +4,7 @@ padding: 2rem;
 }
 
 #main-box{
-    height: 1600px;
+    height: 100px;
     display: grid;
     grid-template-columns: 30% 30% 30%;
     grid-gap: 3%;

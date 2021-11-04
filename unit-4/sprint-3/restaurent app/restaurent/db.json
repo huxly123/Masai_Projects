@@ -9,7 +9,7 @@
     "totalvotes":456,
     "reviews":432,
     "cost_for_one":500,
-    "ratings":5.3,
+    "ratings":4.3,
   
     "min":50,
     "time":30,
@@ -22,12 +22,12 @@
  "payment_methods": {
    "card": true,
      "cash": false,
-     "upi": false
+     "upi": true
  },
  "totalvotes":4342,
  "reviews":1234,
  "cost_for_one":456,
- "ratings":8,
+ "ratings":2.5,
 
  "min":38,
  "time":26,
@@ -38,14 +38,14 @@
 { 
   "id":3,
  "payment_methods": {
-   "card": false,
+   "card": true,
      "cash": true,
      "upi": false
  },
  "totalvotes":31314,
  "reviews":24254,
  "cost_for_one":234,
- "ratings":10,
+ "ratings":1.1,
 
  "min":23,
  "time":12,
@@ -63,7 +63,7 @@
  "totalvotes":1233,
  "reviews":6445,
  "cost_for_one":123,
- "ratings":10,
+ "ratings":5,
 
  "min":24,
  "time":54,
@@ -74,13 +74,13 @@
   "id":5,
  "payment_methods": {
    "card": false,
-     "cash": false,
+     "cash": true,
      "upi": true
  },
  "totalvotes":325,
  "reviews":23,
  "cost_for_one":144,
- "ratings":9,
+ "ratings":3.6,
 
  "min":36,
  "time":33,
@@ -97,7 +97,7 @@
  "totalvotes":366,
  "reviews":134,
  "cost_for_one":767,
- "ratings":10,
+ "ratings":4.8,
 
  "min":57,
  "time":25,
@@ -109,12 +109,12 @@
  "payment_methods": {
    "card": true,
      "cash": false,
-     "upi": false
+     "upi": true
  },
  "totalvotes":253,
  "reviews":256,
  "cost_for_one":176,
- "ratings":8,
+ "ratings":1.9,
 
  "min":78,
  "time":22,
@@ -126,13 +126,13 @@
   "id":8,
  "payment_methods": {
    "card": true,
-     "cash": true,
+     "cash": false,
      "upi": true
  },
  "totalvotes":533,
  "reviews":232,
  "cost_for_one":455,
- "ratings":8,
+ "ratings":2.8,
 
  "min":13,
  "time":11,
@@ -144,13 +144,13 @@
   "id":9,
  "payment_methods": {
    "card": false,
-     "cash": false,
+     "cash": true,
      "upi": true
  },
  "totalvotes":24542,
  "reviews":755,
  "cost_for_one":535,
- "ratings":9.8,
+ "ratings":4.7,
 
  "min":56,
  "time":34,
@@ -168,7 +168,7 @@
  "totalvotes":543,
  "reviews":756,
  "cost_for_one":424,
- "ratings":8.6,
+ "ratings":3,
 
  "min":78,
  "time":12,
@@ -186,7 +186,7 @@
  "totalvotes":432,
  "reviews":575,
  "cost_for_one":546,
- "ratings":4,
+ "ratings":2,
 
  "min":34,
  "time":75,
@@ -204,7 +204,7 @@
  "totalvotes":7796,
  "reviews":9869,
  "cost_for_one":564,
- "ratings":9.7,
+ "ratings":1.5,
 
  "min":66,
  "time":54,

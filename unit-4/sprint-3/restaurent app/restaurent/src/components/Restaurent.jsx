@@ -5,7 +5,11 @@ import "./restaurant.css"
 
 function Restaurent() {
 
-const [data,setdata]=useState([])
+let [data,setdata]=useState([]);
+
+const [filterData,setFilterdata]=useState([]);
+
+
 
 useEffect(()=>{
 fetch("http://localhost:3001/datas").then((d)=>d.json())
@@ -15,20 +19,50 @@ setdata(res)
 })
 
 },[])
-const handle4star=()=>{
-    if(data.ratings>9){
-        setdata(data)
-    }
+
+
+const handlestar=(star)=>{
+    const updatedArr=data.filter(item=>{
+        return +item.ratings>=star
+    }).sort((a,b)=>Number(a.ratings)-Number(b.ratings))
+    setFilterdata(updatedArr)
 }
 
+
+
+const handleFilter=(item)=>{
+    const updArr=data.filter(el=>item==="all"?el.payment_methods.cash&&el.payment_methods.card&&el.payment_methods.upi:el.payment_methods[item])
+
+setFilterdata(updArr)
+}
+
+const handlehl=()=>{
+    const uppparr=data.sort((a,b)=>Number(b.cost_for_one)-Number(a.cost_for_one));
+    setFilterdata(uppparr)
+}
+
+const handlelh=()=>{
+    const uppparr=data.sort((a,b)=>Number(a.cost_for_one)-Number(b.cost_for_one));
+    setFilterdata([...uppparr])
+}
+
+const handleshowall=()=>{
+setFilterdata(data)
+
+}
+console.log(filterData.length);
+const dataaa =filterData.length>0 ?filterData:data
     return (
         <>
         <div id='button-div'>
-        <Button onClick={handle4star}>4 star above</Button><Button>3 star above</Button><Button>2 star above</Button><Button>1 star above</Button><Button>cash only</Button><Button>card only</Button><Button>Upi only</Button><Button>All payment</Button><Button>High to low</Button><Button>Low to high</Button>
+        <Button variant="success" onClick={()=>handlestar(4)}>4 star above</Button><Button  variant="success" onClick={()=>handlestar(3)}>3 star above</Button><Button  variant="success" onClick={()=>handlestar(2)}>2 star above</Button><Button variant="success"  onClick={()=>handlestar(1)}>1 star above</Button>
+        <Button onClick={()=>handleFilter("cash")}>cash </Button><Button onClick={()=>handleFilter("card")}>card</Button><Button onClick={()=>handleFilter("upi")}>Upi </Button><Button onClick={()=>handleFilter("all")} variant="success" >All payment</Button>
+        <Button onClick={()=>handlehl()}>High to low</Button><Button onClick={()=>handlelh()}>Low to high</Button>
+        {/* <Button variant="success" onClick={()=>handleshowall()}>Show all</Button> */}
         </div>
         <div id="main-box">
             {
-                data.map((datas)=>(
+                dataaa.map((datas)=>(
                   <Container key={datas.id} className="contain">
                       
                       <Row >
@@ -40,26 +74,15 @@ const handle4star=()=>{
                           <p  style={{color:"gray",textAlign:"left"}}>{datas.type}</p>
                           <p style={{color:"gray",textAlign:"left"}}>Cost Rs.{datas.cost_for_one}  for one</p>
                           <div>
-                              <p style={{textAlign:"left"}}>Min Rs.{datas.min}   . Up to {datas.time}min</p>
+                              <p  style={{textAlign:"left"}}>Min Rs.{datas.min}   . Up to {datas.time}min</p>
                              
                           </div>
-                     {(()=>{
- if(datas.payment_methods.card===true&&datas.payment_methods.upi===true&&datas.payment_methods.cash===true){
-return (<p style={{textAlign:"left"}}>Accept all payments</p>)
- }
- else if(datas.payment_methods.card===true&&datas.payment_methods.upi===false&&datas.payment_methods.cash===false){
-     return (<p style={{textAlign:"left"}}>Accept card payment</p>)
- }
- else if(datas.payment_methods.card===false&&datas.payment_methods.upi===true&&datas.payment_methods.cash===false){
-    return (<p style={{textAlign:"left"}}>Accept upi payment</p>)
-}
-else if(datas.payment_methods.card===false&&datas.payment_methods.upi===false&&datas.payment_methods.cash===true){
-    return (<p style={{textAlign:"left"}}>Accept cash payment</p>)
-}
-                     })  
-                     ()}
+                          <p style={{color:"gray",textAlign:"left"}}>
+              {datas.payment_methods.cash && "Cash "}
+              {datas.payment_methods.card && "Card "}
+              {datas.payment_methods.upi && "UPI"}
                         
-                        
+                        </p>
                           </Col >
                           <Col className="col-3">
                           <Button variant="success" style={{margin:"0 0 1rem 0",marginLeft:"60%"}}>{datas.ratings}</Button>
