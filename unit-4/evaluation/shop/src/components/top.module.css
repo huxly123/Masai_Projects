@@ -1,0 +1,19 @@
+.top{
+    
+   
+    margin: 3vh;
+    background-color:#EEEEEE ;
+    padding: 10px;
+}
+.top button{
+    border: none;
+    padding: 10px;
+    background-color: blueviolet;
+    cursor: pointer;
+    margin: 10px 10px 10px 10px;
+}
+.top input{
+    width: 40vw;
+    border: none;
+    margin: 10px 10px 10px 10px;
+}
