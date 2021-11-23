@@ -1,0 +1,5 @@
+reducer -->(state,action)--> state will be modified according to action
+
+dispatchEvent -->(type,payload) 
+
+actiontypes--> not to get spelling mistake
