@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   addTodoLoading,
   addTodoSuccess,
@@ -12,19 +13,24 @@ import {
   getTodoError,
 } from "../Redux/action";
 function Todo() {
+
+
+const getData = async () => {
+  dispatch(getTodoLoading());
+  try {
+    const { data } = await axios.get("http://localhost:3001/todos");
+    dispatch(getTodoSuccess(data));
+  } catch (err) {
+    dispatch(getTodoError(err));
+  }
+};
+
+
   useEffect(() => {
     getData();
   }, []);
 
-  const getData = async () => {
-    dispatch(getTodoLoading());
-    try {
-      const { data } = await axios.get("http://localhost:3001/todos");
-      dispatch(getTodoSuccess(data));
-    } catch (err) {
-      dispatch(getTodoError(err));
-    }
-  };
+  
 
   const dispatch = useDispatch();
 
@@ -84,7 +90,7 @@ function Todo() {
           <span>{e.title}</span>
           {e.status && (
             <s style={{ display: "inline", marginLeft: "60px" }}>
-              Not completed
+              Not completed(complete)
             </s>
           )}
           {!e.status && (
@@ -100,19 +106,35 @@ function Todo() {
               border: "none",
               padding: "5px",
               borderRadius: "4px",
-                  }} onClick={async () => {
-                      const data=!e.statuss
-                      await axios.patch(
-                          `http://localhost:3001/todos/${e.id}`, {
-                           statuss:data
-                       }
-                     );
+            }} onClick={async () => {
+                    console.log("clicked");
+                   
+                      await axios.patch(`http://localhost:3001/todos/${e.id}`, {
+                        statuss: !e.statuss,
+                      });
+              getData()
+  //        fetch(`http://localhost:3001/todos/${e.id}`, {
+  //          method: "PATCH",
+  //          headers: {
+  //   "Access-Control-Allow-Origin": "*",
+  //   "Content-Type": "Accept",
+  //   "Access-Control-Allow-Methods": "GET,POST,PATCH,DELETE",
+  // },
+  //          body: JSON.stringify({
+  //            satuss: false,
+  //          }),
+  //          redirect: "follow",
+  //        })
+  //          .then((response) => response.text())
+  //          .then((result) => console.log(result))
+  //          .catch((error) => console.log("error", error))
+              
                      
             }}
           >
             Toggle
           </button>
-          <button
+         <Link to={`/todo/${e.id}`}> <button
             style={{
               cursor: "pointer",
               marginLeft: "80px",
@@ -123,7 +145,7 @@ function Todo() {
             }}
           >
             Edit
-          </button>
+          </button></Link>
         </div>
       ))}
     </div>

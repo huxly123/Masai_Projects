@@ -2,18 +2,23 @@
   "todos": [
     {
       "id": "46pmPkIo0nvgC-NqHX7IX",
-      "statuss": false,
+      "statuss": true,
       "title": "React"
     },
     {
       "id": "EM4M2pjmftmPcqSCJVqLl",
-      "statuss": false,
+      "statuss": true,
       "title": "Redux"
     },
     {
       "id": "anRxW6ZyzDBKEzGruQmK6",
-      "statuss": false,
+      "statuss": true,
       "title": "CSS"
+    },
+    {
+      "id": "Le0hzSTcIyWTvQdMtPnbB",
+      "statuss": true,
+      "title": "js"
     }
   ]
 }
