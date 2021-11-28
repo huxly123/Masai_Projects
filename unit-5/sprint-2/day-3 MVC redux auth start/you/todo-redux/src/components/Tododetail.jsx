@@ -9,11 +9,16 @@ function Tododetail() {
     const [user,setUser]=useState([])
 
     useEffect(async () => {
+        gett()
+    }, [id])
+    
+    const gett = async () => {
+        
         const { data } = await axios.get(`http://localhost:3001/todos/${id}`);
-     console.log("user:", data);
-     
-        setUser([data])
-},[id])
+        // console.log("user:", data);
+
+        setUser([data]);
+    }
 
 // console.log("user:",user);
     return (

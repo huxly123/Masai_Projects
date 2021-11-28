@@ -15,6 +15,9 @@ import {
   updateTodoSuccess,
   updateTodoError,
 } from "../Redux/TodoStore/action";
+
+
+
 function Todo() {
   
 
@@ -39,9 +42,13 @@ const getData = () => {
 
   const dispatch = useDispatch();
 
-  const { loading, data } = useSelector((store) => store.todos);
+  const { loading, data } = useSelector((store) => store.todos.todos);
   const [text, setText] = useState("");
-  //   console.log(data);
+
+  
+ 
+ 
+
   if (loading)
     return <h2>Loading</h2>
   return (
@@ -75,7 +82,7 @@ const getData = () => {
                 payload
               );
               dispatch(addTodoSuccess(data));
-              getData()
+              getData();
             } catch (err) {
               dispatch(addTodoError(err));
             }
@@ -91,19 +98,19 @@ const getData = () => {
             border: "1px solid #76FF03",
             marginTop: "10px",
           }}
-          key={e.id}
+          key={nanoid()}
         >
           <span>{e.title}</span>
-          {e.statuss? (
-            <s style={{ display: "inline", marginLeft: "60px" }}>
+          {e.statuss ? (
+            <s style={{ display: "inline", marginLeft: "60px", color: "red" }}>
               Not completed
-              
             </s>
-          ):
-          !e.statuss && (
-            <p style={{ display: "inline", marginLeft: "60px" }}>
-              Not completed
-            </p>
+          ) : (
+            !e.statuss && (
+              <p style={{ display: "inline", marginLeft: "60px" }}>
+                Not completed
+              </p>
+            )
           )}
           <button
             style={{
@@ -115,17 +122,19 @@ const getData = () => {
               borderRadius: "4px",
             }}
             onClick={async () => {
-              dispatch(updateTodoLoading())
+              dispatch(updateTodoLoading());
               try {
-              const {data}=  await axios.patch(`http://localhost:3001/todos/${e.id}`, {
-                  statuss: !e.statuss,
-              })
-                dispatch(updateTodoSuccess(data))
-                getData()
+                const { data } = await axios.patch(
+                  `http://localhost:3001/todos/${e.id}`,
+                  {
+                    statuss: !e.statuss,
+                  }
+                );
+                dispatch(updateTodoSuccess(data));
+                getData();
               } catch (err) {
-                dispatch(updateTodoError(err))
+                dispatch(updateTodoError(err));
               }
-    
             }}
           >
             Toggle
@@ -164,7 +173,7 @@ const getData = () => {
         </div>
       ))}
     </div>
-  )
+  );
 }
 
 export default Todo;

@@ -16,7 +16,7 @@ const initState = {
     error: false,
   },
 };
-
+console.log("todo reducer");
 export const Todoreducer = (state = initState, { type, payload }) => {
   switch (type) {
     case ADD_TODO_LOADING:
