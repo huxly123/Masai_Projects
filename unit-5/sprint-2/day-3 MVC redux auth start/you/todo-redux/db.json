@@ -7,18 +7,8 @@
     },
     {
       "id": "EM4M2pjmftmPcqSCJVqLl",
-      "statuss": true,
+      "statuss": false,
       "title": "Redux"
-    },
-    {
-      "id": "anRxW6ZyzDBKEzGruQmK6",
-      "statuss": true,
-      "title": "CSS"
-    },
-    {
-      "id": "Le0hzSTcIyWTvQdMtPnbB",
-      "statuss": true,
-      "title": "js"
     }
   ]
 }

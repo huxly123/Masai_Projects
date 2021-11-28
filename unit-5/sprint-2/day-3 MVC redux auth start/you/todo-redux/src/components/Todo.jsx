@@ -106,46 +106,63 @@ const getData = async () => {
               border: "none",
               padding: "5px",
               borderRadius: "4px",
-            }} onClick={async () => {
-                    console.log("clicked");
-                   
-                      await axios.patch(`http://localhost:3001/todos/${e.id}`, {
-                        statuss: !e.statuss,
-                      });
-              getData()
-  //        fetch(`http://localhost:3001/todos/${e.id}`, {
-  //          method: "PATCH",
-  //          headers: {
-  //   "Access-Control-Allow-Origin": "*",
-  //   "Content-Type": "Accept",
-  //   "Access-Control-Allow-Methods": "GET,POST,PATCH,DELETE",
-  // },
-  //          body: JSON.stringify({
-  //            satuss: false,
-  //          }),
-  //          redirect: "follow",
-  //        })
-  //          .then((response) => response.text())
-  //          .then((result) => console.log(result))
-  //          .catch((error) => console.log("error", error))
-              
-                     
+            }}
+            onClick={async () => {
+              console.log("clicked");
+
+              await axios.patch(`http://localhost:3001/todos/${e.id}`, {
+                statuss: !e.statuss,
+              });
+              getData();
+              //        fetch(`http://localhost:3001/todos/${e.id}`, {
+              //          method: "PATCH",
+              //          headers: {
+              //   "Access-Control-Allow-Origin": "*",
+              //   "Content-Type": "Accept",
+              //   "Access-Control-Allow-Methods": "GET,POST,PATCH,DELETE",
+              // },
+              //          body: JSON.stringify({
+              //            satuss: false,
+              //          }),
+              //          redirect: "follow",
+              //        })
+              //          .then((response) => response.text())
+              //          .then((result) => console.log(result))
+              //          .catch((error) => console.log("error", error))
             }}
           >
             Toggle
           </button>
-         <Link to={`/todo/${e.id}`}> <button
+          <Link to={`/todo/${e.id}`}>
+            {" "}
+            <button
+              style={{
+                cursor: "pointer",
+                marginLeft: "80px",
+                background: "#90A4AE",
+                border: "none",
+                padding: "5px",
+                borderRadius: "4px",
+              }}
+            >
+              Edit
+            </button>
+          </Link>
+          <button
             style={{
               cursor: "pointer",
               marginLeft: "80px",
-              background: "#90A4AE",
+              background: "blue",
               border: "none",
               padding: "5px",
               borderRadius: "4px",
             }}
+            onClick={async () => {
+              await axios.delete(`http://localhost:3001/todos/${e.id}`);
+            }}
           >
-            Edit
-          </button></Link>
+            Delete
+          </button>
         </div>
       ))}
     </div>
