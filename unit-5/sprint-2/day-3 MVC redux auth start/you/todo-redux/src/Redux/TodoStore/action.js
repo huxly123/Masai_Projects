@@ -4,7 +4,10 @@ import {
     ADD_TODO_ERROR,
     GET_TODO_LOADING,
     GET_TODO_SUCCESS,
-GET_TODO_ERROR
+GET_TODO_ERROR,
+UPDATE_TODO_LOADING,
+UPDATE_TODO_SUCCESS,
+UPDATE_TODO_ERROR
 } from "./actionType"
 
 export const addTodoLoading = () => ({
@@ -37,4 +40,18 @@ export const getTodoError = (data) => ({
   payload: data,
 });
 
-// export const delete
+// export update
+
+export const updateTodoLoading = () => ({
+  type:UPDATE_TODO_LOADING
+})
+
+export const updateTodoSuccess = (data) => ({
+  type: UPDATE_TODO_SUCCESS,
+  payload: data
+});
+
+export const updateTodoError = (data) => ({
+  type: UPDATE_TODO_ERROR,
+  payload:data
+})

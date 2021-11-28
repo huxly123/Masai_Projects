@@ -1,6 +1,17 @@
 
 
-import { createStore } from "redux"
-import { Todoreducer } from "./reducer"
+import { combineReducers, createStore } from "redux"
+import { AuthReducer } from "./AuthRedux/reducer"
+import { Todoreducer } from "./TodoStore/reducer"
 
-export const store=createStore(Todoreducer)
+
+// const reducer = combineReducers({
+//   todo: Todoreducer,
+//   auth:AuthReducer
+// })
+
+ export const store = createStore(
+
+Todoreducer,
+ window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+ );

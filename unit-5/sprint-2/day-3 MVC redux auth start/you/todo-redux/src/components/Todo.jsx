@@ -11,35 +11,40 @@ import {
   getTodoLoading,
   getTodoSuccess,
   getTodoError,
-} from "../Redux/action";
+  updateTodoLoading,
+  updateTodoSuccess,
+  updateTodoError,
+} from "../Redux/TodoStore/action";
 function Todo() {
+  
+
+  useEffect( () => {
+    getData()
+  }, [])
 
 
-const getData = async () => {
+const getData = () => {
   dispatch(getTodoLoading());
   try {
-    const { data } = await axios.get("http://localhost:3001/todos");
-    dispatch(getTodoSuccess(data));
+    fetch("http://localhost:3001/todos").then((d) => d.json())
+      .then((d) => {
+      dispatch(getTodoSuccess(d));
+    })
+   
   } catch (err) {
     dispatch(getTodoError(err));
   }
 };
 
 
-  useEffect(() => {
-    getData();
-  }, []);
-
-  
-
   const dispatch = useDispatch();
 
   const { loading, data } = useSelector((store) => store.todos);
   const [text, setText] = useState("");
-//   console.log(data);
-  return loading ? (
-    "Loading..."
-  ) : (
+  //   console.log(data);
+  if (loading)
+    return <h2>Loading</h2>
+  return (
     <div>
       <div>
         <input
@@ -70,6 +75,7 @@ const getData = async () => {
                 payload
               );
               dispatch(addTodoSuccess(data));
+              getData()
             } catch (err) {
               dispatch(addTodoError(err));
             }
@@ -88,12 +94,13 @@ const getData = async () => {
           key={e.id}
         >
           <span>{e.title}</span>
-          {e.status && (
+          {e.statuss? (
             <s style={{ display: "inline", marginLeft: "60px" }}>
-              Not completed(complete)
+              Not completed
+              
             </s>
-          )}
-          {!e.status && (
+          ):
+          !e.statuss && (
             <p style={{ display: "inline", marginLeft: "60px" }}>
               Not completed
             </p>
@@ -108,27 +115,17 @@ const getData = async () => {
               borderRadius: "4px",
             }}
             onClick={async () => {
-              console.log("clicked");
-
-              await axios.patch(`http://localhost:3001/todos/${e.id}`, {
-                statuss: !e.statuss,
-              });
-              getData();
-              //        fetch(`http://localhost:3001/todos/${e.id}`, {
-              //          method: "PATCH",
-              //          headers: {
-              //   "Access-Control-Allow-Origin": "*",
-              //   "Content-Type": "Accept",
-              //   "Access-Control-Allow-Methods": "GET,POST,PATCH,DELETE",
-              // },
-              //          body: JSON.stringify({
-              //            satuss: false,
-              //          }),
-              //          redirect: "follow",
-              //        })
-              //          .then((response) => response.text())
-              //          .then((result) => console.log(result))
-              //          .catch((error) => console.log("error", error))
+              dispatch(updateTodoLoading())
+              try {
+              const {data}=  await axios.patch(`http://localhost:3001/todos/${e.id}`, {
+                  statuss: !e.statuss,
+              })
+                dispatch(updateTodoSuccess(data))
+                getData()
+              } catch (err) {
+                dispatch(updateTodoError(err))
+              }
+    
             }}
           >
             Toggle
@@ -159,6 +156,7 @@ const getData = async () => {
             }}
             onClick={async () => {
               await axios.delete(`http://localhost:3001/todos/${e.id}`);
+              getData();
             }}
           >
             Delete
@@ -166,7 +164,7 @@ const getData = async () => {
         </div>
       ))}
     </div>
-  );
+  )
 }
 
 export default Todo;
