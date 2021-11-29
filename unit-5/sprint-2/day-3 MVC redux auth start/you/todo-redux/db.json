@@ -2,12 +2,12 @@
   "todos": [
     {
       "id": "46pmPkIo0nvgC-NqHX7IX",
-      "statuss": true,
+      "statuss": false,
       "title": "React"
     },
     {
       "id": "9HEsFSMwEGQ337rI-U6_s",
-      "statuss": true,
+      "statuss": false,
       "title": "Redux"
     },
     {
@@ -19,6 +19,11 @@
       "id": "wfaOhJpmLkYffMLu2y8ea",
       "statuss": true,
       "title": "something"
+    },
+    {
+      "id": "u4p8U4R5XSEmPToGnfPiA",
+      "statuss": false,
+      "title": "ddd"
     }
   ]
 }
