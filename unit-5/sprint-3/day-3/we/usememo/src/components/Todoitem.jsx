@@ -1,6 +1,8 @@
 import React from 'react'
 
-function Todoitem({status,title,id,handleToggle}) {
+export function Todoitem({ status, title, id, handleToggle }) {
+    
+    console.log("todo render");
     return (
         <div>
             <b>{title}</b>:{status ? "Done" : "Not Done"}
@@ -11,4 +13,4 @@ function Todoitem({status,title,id,handleToggle}) {
     )
 }
 
-export default Todoitem
+export const MemTodo=React.memo(Todoitem)
