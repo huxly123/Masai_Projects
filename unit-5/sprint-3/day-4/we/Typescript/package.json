@@ -1,0 +1,11 @@
+{
+ "scripts":{
+    "build":"tsc index.ts"
+  }
+,
+
+  "dependencies": {
+    "typescript": "^4.5.2"
+  }
+ 
+}
