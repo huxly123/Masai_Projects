@@ -1,11 +1,11 @@
 function coin (num, dp) {
     if (num == 0) {
-        return 1
+        return 0
     }
     if (dp[num] !== -1) {
         return dp[num]
     }
-    dp[num] = Math.max(coin(Math.floor(num / 2),dp) + coin(Math.floor(num / 3),dp) + coin(Math.floor(num / 4),dp))
+    dp[num] = Math.max(num,coin(Math.floor(num / 2),dp) + coin(Math.floor(num / 3),dp) + coin(Math.floor(num / 4),dp))
     return dp[num]
 }
 
