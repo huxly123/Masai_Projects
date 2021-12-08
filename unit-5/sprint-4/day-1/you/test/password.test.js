@@ -1,22 +1,9 @@
-function password(str) {
-    let flag = true
-      if (!/(?=.*[A-Z])/.test(str)) {
-          console.log("Not have capital letters");
-          flag=flag
-    }
-    if (str.length < 6) {
-        flag = false
-        console.log("Less than 6 characters");
-    }
-    if (!/(?=.*[a-z])/.test(str)) {
-        console.log("Not have small letters");
-        flag=false
-    }
-    if (!/([!,%,@,#,$,^,*,?,_,~]+)/.test(str)) {
-        console.log("Not have special charaters");
-        flag=false
-    }
-    if (!/(?=.*\d)/.test(str)) {
-          
-      }
-}
+
+const password=require("./password")
+test("password",()=> {
+    expect(password("1A3456")).toBe("Not have small letters");
+    expect(password("1A3456a")).toBe("Not have special charaters");
+    expect(password("!Aafdvfe")).toBe("Not having numbers");
+    expect(password("!Aa")).toBe("Less than 6 characters");
+     expect(password("!Aafdvfe2")).toBe("Accepted");
+})
