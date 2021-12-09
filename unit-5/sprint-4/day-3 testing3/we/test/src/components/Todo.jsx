@@ -13,6 +13,7 @@ export default function Tod() {
         }}
       />
       <button
+        className="addTodo"
         data-testid="addbtn"
         onClick={() => {
           settodos([...todos, text]);

@@ -25,5 +25,26 @@ describe("todo test", function () {
     //    cy.visit("/users")
    
    });
+    
+    
+    it("should add todo to list", function () {
+         cy.get("input")
+           .type("Learn React")
+           .should("have.value", "Learn React");
+
+        cy.get("button").click();
+
+        cy.get("input").clear()
+
+         cy.get("input")
+           .type("Learn Vue")
+           .should("have.value", "Learn Vue");
+
+         cy.get("button").click();
+
+         cy.get("input").clear();
+        
+        cy.get(".todoitems").should("have.length",2)
+    })
 
 })

@@ -22,7 +22,7 @@
     "extends": [
       "react-app",
       "react-app/jest",
-      "plugin:cypress/reco"
+      "plugin:cypress/recommended"
     ]
   },
   "browserslist": {
@@ -36,8 +36,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "cypress": "^9.1.1"
   }
 }
