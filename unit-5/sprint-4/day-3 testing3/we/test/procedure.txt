@@ -1,0 +1,5 @@
+install
+cypress /integration folder structure
+<reference types="cypress"/>
+ in integration test file
+ add "plugin:cypress/recommended" in eslint in package.json
