@@ -29,7 +29,7 @@ describe("todo test", function () {
     
     it("should add todo to list", function () {
          cy.get("input")
-           .type("Learn React")
+           .type("Learn React",{delay:100})
            .should("have.value", "Learn React");
 
         cy.get("button").click();
@@ -37,7 +37,7 @@ describe("todo test", function () {
         cy.get("input").clear()
 
          cy.get("input")
-           .type("Learn Vue")
+           .type("Learn Vue", { delay: 100 })
            .should("have.value", "Learn Vue");
 
          cy.get("button").click();
