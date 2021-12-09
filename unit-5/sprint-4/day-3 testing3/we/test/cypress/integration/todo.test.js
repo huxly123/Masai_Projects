@@ -46,5 +46,12 @@ describe("todo test", function () {
         
         cy.get(".todoitems").should("have.length",2)
     })
+    it("misc", function () {
+        cy.request("GET", "https://reqres.in/api/users/2").then((data) => {
+            cy.log(data);
 
+            expect(data.status).to.eq(200);
+            expect(data.body.data.first_name).to.eq("Janet")
+   })
+})
 })
