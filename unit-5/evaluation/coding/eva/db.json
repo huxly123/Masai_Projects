@@ -1,0 +1,22 @@
+{
+  "user": [
+    {
+      "first_name": "HUXLY",
+      "last_name": "SINGH A",
+      "dob": "2021-12-07",
+      "id": 1
+    },
+    {
+      "first_name": "HUXLY",
+      "last_name": "SINGH A",
+      "dob": "2021-12-03",
+      "id": 2
+    },
+    {
+      "first_name": "HUXLY",
+      "last_name": "SINGH A",
+      "dob": "2021-12-16",
+      "id": 3
+    }
+  ]
+}
