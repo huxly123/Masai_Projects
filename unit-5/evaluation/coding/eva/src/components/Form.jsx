@@ -4,7 +4,6 @@ import axios from "axios"
 
 
 function Form() {
-
 const [formData, setFormData] = useState({
   first_name: "",
   last_name: "",
@@ -15,6 +14,7 @@ const handleChange = (e) => {
  
   const { name, value, } = e.target;
   setFormData({
+
     ...formData,
     [name]: value,
   });
@@ -22,16 +22,15 @@ const handleChange = (e) => {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        await axios.post("http://localhost:3001/user", formData);
+      let {data}=  await axios.post("http://localhost:3001/user", formData);
+      if (data) {
         setTimeout(() => {
-            alert("ABC")
+          alert("ABC")
         },2000)
-
-
+      }
 }
 
-
-
+  
 
     return (
       <div className={style.formbody}>
