@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import style from "./form.module.css"
-import axios from "axios"
+import axios from "axios";
 
 
 function Form() {
