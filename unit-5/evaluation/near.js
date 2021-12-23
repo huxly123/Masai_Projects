@@ -6,38 +6,54 @@ function runProgram(input) {
         let n = +(input[line++]);
         let arr = input[line++].trim().split(" ").map(Number);
         let stack = [];
-        let ans=[]
-        for (let i = 0; i < arr.length; i++){
-            if (i == 0) {
-                stack.push(arr[i])
-                ans.push(arr[i+1])
-            }
-          
-            for (let j = stack.length - 1; j >= 0; j--){
-                    
-                if (arr[i] < stack[j]) {
-                     
-                        stack.pop();
-                       
-                    } if (arr[i] > stack[j]) {
-                   ans.push(stack[j])
-                        stack.push(arr[i])
-                    break
-                    }
-                }
-            
-             if(stack.length==0){
-    ans.push(-1);
-    stack.push(arr[i])
-  }
+      for (let i = 0; i < arr.length; i++) {
+        let leftindex = -1;
+        let rightindex = -1
+        for (let j = i - 1; j >= 0; j--) {
+          if (arr[j] < arr[i]) {
+            leftindex = j
+            break
+          }
         }
-        console.log(ans.join(" "));
-    }
+        for (let k = i + 1; k < arr.length; k++) {
+          if (arr[k] < arr[i]) {
+            rightindex = k
+            break
+          }
+        }
+        if (leftindex == -1 && rightindex == -1) {
+          stack.push(-1)
+        } else {
+          if (leftindex !== -1 && rightindex !== -1) {
+            let left = i - leftindex;
+            let right = rightindex - i;
+            if (left == right) {
+              stack.push(arr[leftindex])
+            }
+          else  if (left < right) {
+              stack.push(arr[leftindex])
+            } else {
+              stack.push(arr[rightindex])
+            }
+          }
+          else if (leftindex == -1) {
+                stack.push(arr[rightindex]);
+          }
+          else if (rightindex == -1) {
+             stack.push(arr[leftindex]);
+          }
+        }
+      }
+      console.log(stack.join(" "));
+  }
+  
 }
 if (process.env.USERNAME === "huxly") {
-  runProgram(`1
+  runProgram(`2
 8
-39 27 11 4 24 32 32 1`);
+39 27 11 4 24 32 32 1
+7
+1 4 6 8 4 7 5`); //-1 1 4 6 1 4 4
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");
