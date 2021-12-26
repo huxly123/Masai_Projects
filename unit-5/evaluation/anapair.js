@@ -3,7 +3,7 @@ function runProgram(input) {
     let cases = +(input[0]);
     let line = 1;
     for (let z = 0; z < cases; z++){
-        let count=0
+        
         let n = +(input[line++]);
         let obj = {}
         let arr=[]
@@ -15,11 +15,16 @@ function runProgram(input) {
            
             if (obj[temp] === undefined) {
                 obj[temp]=1
-               count++
+               
+            } else {
+              obj[temp]+=1
            }
-        }
-        // console.log(obj);
-        console.log(count);
+      }
+      let ans=0
+      for (let key in obj) {
+      ans+=obj[key]*(obj[key]-1)/2
+      }
+      console.log(ans);
     }
 }
 if (process.env.USERNAME === "huxly") {
