@@ -138,4 +138,124 @@
 //   callback(name);
 // }
 
-// processUserInput(greeting);
+// // processUserInput(greeting);
+// function greet(name, formatter) {
+//     return 'welcome'+ formatter(name)
+// }
+
+
+// console.log(
+//   greet("joe", function (name) {
+//     return name.toUpperCase();
+//   })
+// );
+ 
+//  setTimeout(function () {
+//    var counter = 0;
+//    console.log("Counter:", counter++);
+//    setTimeout(function () {
+    
+//      console.log("Counter:", counter++);
+//      setTimeout(function () {
+      
+//        console.log("Counter:", counter++);
+//      }, 1000);
+//    }, 2000);
+//  }, 3000);
+// var p1 = new Promise(function (resolve, reject) {
+//   var num = Math.random();
+//   if (num < 0.5) {
+//     resolve(num);
+//   } else {
+//     reject(num);
+//   }
+// });
+
+// p1.then(function (result) {
+//   console.log("Success:", result);
+// }).catch(function (error) {
+//   console.log("Error:", error);
+// // });
+// console.log("first");
+// var promise = new Promise(function (resolve, reject) {
+//   setTimeout(function () {
+//     var randomInt = Math.floor(Math.random() * 10);
+//     resolve(randomInt);
+//   }, 4000);
+// });
+// console.log(promise);
+// promise.then(function (data) {
+//   console.log("Random int passed to resolve:", data);
+// });
+// console.log("last");
+
+// console.log("start");
+// const myProm = new Promise(function (resolve, reject) {
+//   console.log("running");
+//   resolve();
+// });
+// myProm.then(() => console.log("resolved"));
+// console.log("end of main block");
+
+// var promise = new Promise(function (resolve, reject) {
+//   setTimeout(function () {
+//     randomInt = Math.floor(Math.random() * 10);
+//     resolve(randomInt);
+//   }, 500);
+// });
+
+// promise
+//   .then(function (data) {
+//     console.log("Random int passed to resolve:", data);
+//     return new Promise(function (resolve, reject) {
+//       setTimeout(function () {
+//         resolve(Math.floor(Math.random() * 10));
+//       }, 3000);
+//     });
+//   })
+//   .then(function (data) {
+//     console.log("Second random int passed to resolve:", data);
+//   });
+
+//  var promise = new Promise(function (resolve, reject) {
+//    resolve(5);
+//  });
+
+//  promise
+//    .then(function (data) {
+//      return data * 2;
+//    })
+//    .then(function (data) {
+//      return data + 20;
+//    })
+//    .then(function (data) {
+//      console.log(data);
+//    });
+
+// function fetchh() {
+//     console.log("first");
+//     fetch("https://jsonplaceholder.typicode.com/posts")
+//       .then((d) => d.json())
+//       .then(function (data) {
+//         console.log(data);
+//       })
+//     console.log("last");
+// }
+// fetchh();
+// console.log("gg");
+
+// async function asawa(){
+//    return "ff"
+// }
+// console.log(asawa());
+
+
+async function asawa() {
+    console.log("first");
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const data = await res.json();
+    console.log(data);
+    console.log("last");
+}
+asawa()
+console.log("gg");
