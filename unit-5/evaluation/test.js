@@ -250,12 +250,43 @@
 // console.log(asawa());
 
 
-async function asawa() {
-    console.log("first");
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const data = await res.json();
-    console.log(data);
-    console.log("last");
+// async function asawa() {
+//     console.log("first");
+//     const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+//     const data = await res.json();
+//     console.log(data);
+//     console.log("last");
+// }
+// asawa()
+// console.log("gg");
+
+// function aa() {
+//     var a=10
+
+// }
+
+// aa();
+// console.log(a);
+
+// (function () {
+//     console.log("hi");
+// })()
+
+// var f = function () {
+//   console.log("fsds");
+// };
+
+// foo()
+// import User, { printName as na, printAge } from "./user.js";
+import * as Users from "./user.js"
+
+let printAge = Users.printAge
+let printUser=Users.printName
+// const userss = new User('Bob', 11)
+let user = {
+    age: 12,
+    name:"huxlt"
 }
-asawa()
-console.log("gg");
+
+printUser(user)
+printAge(user)
