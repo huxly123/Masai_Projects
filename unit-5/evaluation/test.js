@@ -351,31 +351,49 @@
 //     }
 // }
 
-let name = {
-    f_name: "huxly",
-    l_name:"singh"
+// let name = {
+//     f_name: "huxly",
+//     l_name:"singh"
+// }
+
+// let name2= {
+//   f_name: "aks",
+//   l_name: "ann",
+// };
+
+// let printName = function (hometown, state) {
+//     console.log(this.f_name+this.l_name+hometown+state);
+// }
+
+// /////call
+
+// printName.call(name, "kan", "tam")
+// printName.call(name2, "chi", "tam");
+
+// ///apply
+
+// printName.apply(name2, ["kan", "tam"]);
+
+// /////Bind
+
+// let printFull = printName.bind(name, "kan", "tam");
+// // console.log(printFull);
+// printFull()
+
+const person = {
+  f_name: "hux",
+  l_name: "singh",
+ get fullName() {
+    return `${this.f_name} ${this.l_name}`
+  },
+ set fullNamee(value) {
+   const parts = value.split(" ");
+   this.f_name = parts[0];
+   this.l_name=parts[1]
+ }
 }
 
-let name2= {
-  f_name: "aks",
-  l_name: "ann",
-};
+person.fullNamee='huux suingh'
 
-let printName = function (hometown, state) {
-    console.log(this.f_name+this.l_name+hometown+state);
-}
-
-/////call
-
-printName.call(name, "kan", "tam")
-printName.call(name2, "chi", "tam");
-
-///apply
-
-printName.apply(name2, ["kan", "tam"]);
-
-/////Bind
-
-let printFull = printName.bind(name, "kan", "tam");
-// console.log(printFull);
-printFull()
+console.log(person.fullName);
+console.log(person);
