@@ -278,15 +278,104 @@
 
 // foo()
 // import User, { printName as na, printAge } from "./user.js";
-import * as Users from "./user.js"
+// import * as Users from "./user.js"
 
-let printAge = Users.printAge
-let printUser=Users.printName
-// const userss = new User('Bob', 11)
-let user = {
-    age: 12,
-    name:"huxlt"
+// let printAge = Users.printAge
+// let printUser=Users.printName
+// // const userss = new User('Bob', 11)
+// let user = {
+//     age: 12,
+//     name:"huxlt"
+// }
+
+// printUser(user)
+// printAge(user)
+
+// let user = 4
+
+// function gg() {
+   
+//     console.log(user);
+// }
+// gg()
+// {
+
+//     var a=1
+// }
+// console.log(a);
+
+// class Student{
+//     constructor(name, age) {
+//         this.name = name
+//           this.age = age;
+//     }
+//     print() {
+//         return this.name + " has age " + this.age
+//     }
+// }
+
+// student1 = new Student("Jhon", 22)
+
+
+// console.log(student1.print());
+
+// class School extends Student{
+//     constructor(name, st_name, st_age) {
+//         super(st_name, st_age)  //represent the student object
+//         this.scl_name=name
+//     }
+//     print() {
+//         return (
+//           this.name +
+//           " whose age is " +
+//           this.age +
+//           " studies in " +
+//           this.scl_name
+//         );
+//     }
+// }
+
+// school1 = new School("ABC", "jane", 23)
+//   console.log(school1);
+// console.log(school1.print());
+
+// let arrr = new Array(10).fill(10)
+// console.log(arrr);
+
+// let arr = [2, 3]
+
+// let obj = {
+//     name: "asad",
+//     getIntro: function () {
+//         console.log(this.name);
+//     }
+// }
+
+let name = {
+    f_name: "huxly",
+    l_name:"singh"
 }
 
-printUser(user)
-printAge(user)
+let name2= {
+  f_name: "aks",
+  l_name: "ann",
+};
+
+let printName = function (hometown, state) {
+    console.log(this.f_name+this.l_name+hometown+state);
+}
+
+/////call
+
+printName.call(name, "kan", "tam")
+printName.call(name2, "chi", "tam");
+
+///apply
+
+printName.apply(name2, ["kan", "tam"]);
+
+/////Bind
+
+let printFull = printName.bind(name, "kan", "tam");
+// console.log(printFull);
+printFull()
