@@ -18,7 +18,7 @@ function knap(wtArr, valArr, n, capacity) {
     else {
         
         dp[n][capacity] = Math.max(valArr[n] + knap(wtArr, valArr, n - 1, capacity - wtArr[n]), knap(wtArr, valArr, n - 1, capacity))
-        return dp
+        return dp[n][capacity];
     }
     
 }
