@@ -41,3 +41,20 @@
 // }
 
 // console.log(su(arr,5));
+
+function knap(wtarr, valarr, n, capacity) {
+    if (capacity == 0 || n < 0) {
+        return 0
+    }
+    if (wtarr[n] > capacity) {
+        return knap(wtarr, valarr, n - 1, capacity)
+    } else {
+        return Math.max(valarr[n] + knap(wtarr, valarr, n - 1, capacity - wtarr[n]), knap(wtarr, valarr, n - 1, capacity))
+    }
+}
+let val = [8, 4, 0, 5,3];
+let wt = [1, 2, 3, 2,2];
+let n = wt.length-1;
+let capacity=4
+
+console.log(knap(wt, val, n, capacity));
