@@ -1,0 +1,2 @@
+Bubble sort --> TC= O(n^2)   SC=O(1)
+Selectionsort-->  TC= O(n^2)   SC=O(1)
