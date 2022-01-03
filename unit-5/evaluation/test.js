@@ -423,3 +423,17 @@
 // };
 
 // console.log(data.vehicle?.warranty);
+
+
+
+// console.log("1" + 2);
+// console.log("3" * 6);
+// console.log("12"-4);
+
+var a = 1;
+let b = 2
+function dd() {
+  console.log(a);
+  console.log(b);
+}
+dd()
