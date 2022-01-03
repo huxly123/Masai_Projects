@@ -380,20 +380,46 @@
 // // console.log(printFull);
 // printFull()
 
-const person = {
-  f_name: "hux",
-  l_name: "singh",
- get fullName() {
-    return `${this.f_name} ${this.l_name}`
-  },
- set fullNamee(value) {
-   const parts = value.split(" ");
-   this.f_name = parts[0];
-   this.l_name=parts[1]
- }
-}
+// const person = {
+//   f_name: "hux",
+//   l_name: "singh",
+//  get fullName() {
+//     return `${this.f_name} ${this.l_name}`
+//   },
+//  set fullNamee(value) {
+//    const parts = value.split(" ");
+//    this.f_name = parts[0];
+//    this.l_name=parts[1]
+//  }
+// }
 
-person.fullNamee='huux suingh'
+// person.fullNamee='huux suingh'
 
-console.log(person.fullName);
-console.log(person);
+// console.log(person.fullName);
+// console.log(person);
+
+// function* simpleGenerator() {
+//   yield 1
+//   yield 2
+//   yield 3
+// }
+
+// const generateObject = simpleGenerator();
+
+
+// console.log(generateObject.next())
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+
+// const data = {
+//   name: "dd",
+//   age: 23,
+//   vehicle: {
+//     warranty: {
+//       date: 21,
+//     },
+//   },
+// };
+
+// console.log(data.vehicle?.warranty);
