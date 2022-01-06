@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "todo": "Learn Vue",
+      "status": false,
+      "id": 2
+    },
+    {
+      "todo": "Learn Tailwind",
+      "status": false,
+      "id": 3
+    },
+    {
+      "todo": "Learn",
+      "status": false,
+      "id": 4
+    }
+  ]
+}

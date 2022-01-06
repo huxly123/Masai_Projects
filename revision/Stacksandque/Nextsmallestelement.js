@@ -3,19 +3,44 @@ function runProgram(input) {
     let cases = +(input[0]);
     let line=1
     for (let z = 0; z < cases; z++){
-        let n = +(input[line++]);
+      let n = +input[line++];
         let arr = input[line++].trim().split(" ").map(Number);
-        let stack=[]
-        for (let i = arr.length - 1; i >= 0; i--){
-            
-            while (stack.length) {
-                if (arr[i] < stack[stack.length - 1]) {
-        stack.pop()
-    }
-}
-
-            stack.push(arr[i])
+        let ans=[]
+        for (let i = 0; i < arr.length; i++) {
+            let left = 0;
+            let right = 0;
+            let ansl = -1;
+            let ansr = -1
+            for (let j = i - 1; j >= 0; j--) {
+                if (arr[j] < arr[i]) {
+                    ansl = j
+                    left = i - j;
+                    break
+                }
+            }
+            for (let j = i + 1; j < n; j++) {      //39 27 11 4 24 32 32 1
+                if (arr[j] < arr[i]) {
+                    ansr = j
+                    right = j -i;
+                    break
+                }
+            } if (ansl == -1 && ansr == -1) {
+                ans.push(-1)
+            }
+            else if (ansl == -1 && ansr !== -1) {
+                ans.push(arr[ansr])
+            }
+            else if (ansl !== -1 && ansr == -1) {
+                 ans.push(arr[ansl]);
+            } else {
+                if (left <= right) {
+                    ans.push(arr[ansl]);
+                } else {
+                    ans.push(arr[ansr]);
+                }
+            }
         }
+        console.log(ans.join(" "));
     }
 }
 if (process.env.USERNAME === "huxly") {
