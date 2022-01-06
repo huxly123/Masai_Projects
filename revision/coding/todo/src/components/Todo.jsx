@@ -65,7 +65,7 @@ console.log(datas);
             <div>
                 <h1>Completed Ones</h1>
                 {
-                    datas.filter((ele) => ele.status == true).map((e) => (
+                    datas.filter((ele) => ele.status === true).map((e) => (
                         
                         
             
