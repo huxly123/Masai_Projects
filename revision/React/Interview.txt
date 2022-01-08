@@ -60,6 +60,32 @@ What is JSX?(jAVASCRIPT xml)
 
 How rendering in React?
 
-1) when state changes :The virtual DOM keep tracks of states when it changes the components get re-rendered
+1) when state changes or props changes :The virtual DOM keep tracks of states when it changes the components get re-rendered
 
-2)shouldComponentUpdate method: 
+2)shouldComponentUpdate method: if u write return true it will render , if it is false
+it will not render it stops rendering!!
+
+3)ForceUpdate:if a button has forceUpdate fn then after clicking it it will rerender the component
+
+////////////////////////////////////////////
+
+Diff b/t state and prop?
+
+*State is handled inside the components and prop is handled outside the component.Respective components will render if the state or props get changed
+
+////////////////////////////////////////////
+
+What are Life cycle methods in React?
+1.Mounting
+2.updating
+3.Unmounting
+
+when All these cycle are happened all the builin function will called if necessary.
+render() is required in mounting and updating,then componentWillUnmount() is required in Unmounting phase
+
+
+////////////////////////////////////////
+
+What is context API?
+
+Context providers a way to pass data through the component tree without having to pass props down  manually at every level. 
