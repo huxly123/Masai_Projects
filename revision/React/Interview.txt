@@ -88,4 +88,16 @@ render() is required in mounting and updating,then componentWillUnmount() is req
 
 What is context API?
 
-Context providers a way to pass data through the component tree without having to pass props down  manually at every level. 
+Context providers a way to pass data through the component tree without having to pass props down  manually at every level. To eliminate prop drilling.
+
+////////////////////////////////////////
+
+What is state uplifting?
+
+State is passed to parent whenever it is required for two children and passed as prop and anything changed to state will render both  the child
+
+
+What is Prop drilling?
+Prop drilling is a method where we pass a props with another component with the help of all the components that come between them
+
+//////////////////////////////////////////
