@@ -1,0 +1,65 @@
+What is React?
+
+*React is the Js Library
+*Building User interfaces for single-page applications
+*React allows developers to create large web applications that can change data, without reloading the full page.
+*only render the updated components not all components
+*The main purpose of React is to be fast, scalable, and simple.
+
+**Disadvantage of ReactJS
+
+They need to be always updated with their skills and learn new ways of doing things. It is another cons which are common for constantly updating technologies. React technologies updating and accelerating so fast that there is no time to make proper documentation.
+
+///////////////////////////////////////
+
+what is virtual DOM?
+
+*It is a virtual representation of Js DOM object
+
+*It can be updated without affecting the actual DOM
+
+* It cannot decide what to be on the screen
+
+Reconcillation(change on real Dom)
+
+If an components changes it get change in virtual Dom for the particular components,
+(change made in virtual dom is easy) after updating it will compare the previous vDom and update the changes in particular component on REAL DOM .this is called as Reconcillation.
+
+//////////////////////////////////////
+
+What is Babel?(Transpiler)
+
+*Not all browser support ES6 AND ES7 Syntax and no browser supports JSX syntax
+
+*Babel converts ES6 Syntax to ES5 syntax and JSX syntax to pure React.
+
+/////////////////////////////////////////
+
+what is webpack?(Bundler)
+
+*Webpack is a bundler for JS and other files that creates bundled file that the users browser can download.
+
+/////////////////////////////////////////
+
+What is setState in React?
+setState() allows you to change state in a React class component. To change the state of a function component, you use the useState() hook. ... setState() enqueues change to the component state and tell React that this component and its children need to be re-rendered with the updated state.
+
+!!! SetState is asynchronous!!!
+
+////////////////////////////////////////////
+
+What is JSX?(jAVASCRIPT xml)
+
+*Writing HTML in javascript code
+
+*With JavaScript, we need to create the element, manipulate the element, and then append it to the DOM. However, with JSX all we need to do is write the HTML tag directly within the JavaScript code
+
+*Browser cant read JSX file it need to be transpiled using Babel.
+
+////////////////////////////////////////////
+
+How rendering in React?
+
+1) when state changes :The virtual DOM keep tracks of states when it changes the components get re-rendered
+
+2)shouldComponentUpdate method: 
