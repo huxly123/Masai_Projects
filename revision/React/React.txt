@@ -1,0 +1,41 @@
+What is Babel in React JS?
+Babel is a transpiler i.e. it converts the JSX to vanilla JavaScript. 
+You can view babel as an intermediate step between your code and 
+"executable" code. React also uses ES6, which is not supported by 
+most of the browsers. Babel converts the ES6 code to a code which is 
+compatible with the browsers
+
+https://medium.com/swlh/the-role-of-babel-in-react-dbcf78c69125#:~:text=Babel%E2%80%99s%20use%20is%20not%20only%20rooted%20in%20React.,code%20is%20compatible%20with%20older%20versions%20of%20JavaScript
+//////////////////////////////////////
+What is modules?
+it is a piece of reusable components which is exported from a file
+
+//////////////////////////////////////
+
+what is webpack?
+webpack is a static module bundler for modern JavaScript
+ applications.When webpack processes your application, it internally
+  builds a dependency graph from one or more entry points and then 
+  combines every module your project needs into one or more bundles, 
+  which are static assets to serve your content from.
+
+What is setState in React?
+setState() allows you to change state in a React class component. To change the state of a function component, you use the useState() hook. ... setState() enqueues change to the component state and tell React that this component and its children need to be re-rendered with the updated state.
+
+!!! SetState is asynchronous!!!
+
+What is virtual DOM?
+
+The Virtual DOM is a light-weight abstraction of the DOM. You can think of it as a copy of the DOM, that can be updated without affecting the actual DOM. It has all the same properties as the real DOM object, but doesn't have the ability to write to the screen like the real DOM.
+The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called reconciliation. ... They may also be considered a part of “virtual DOM” implementation in React.
+
+Prop drilling?
+
+
+State Uplifting?
+
+
+What are React Portals?
+What is context API?
+What are Life cycle methods in React?
+How can you memoize components in React?

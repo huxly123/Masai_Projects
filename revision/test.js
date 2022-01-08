@@ -58,21 +58,78 @@
 
 // console.log(head);
 
-class LinkedList{
-    constructor(value) {
-        this.data = value,
-            this.next=null
-    }
-}
-let head = new LinkedList(1);
-head.next = new LinkedList(2);
-head.next.next=new LinkedList(3)
-// console.log(head);
+// class LinkedList{
+//     constructor(value) {
+//         this.data = value,
+//             this.next=null
+//     }
+// }
+// let head = new LinkedList(1);
+// head.next = new LinkedList(2);
+// head.next.next=new LinkedList(3)
+// // console.log(head);
 
-function printList(head) {
-    while (head !== null) {
-        console.log(head.data);
-        head=head.next
-    }
+// function printList(head) {
+//     while (head !== null) {
+//         console.log(head.data);
+//         head=head.next
+//     }
+// }
+// printList(head)
+// function aa() {
+//     console.log(arguments)
+// }
+
+
+
+// let aa=() => {
+//     console.log(arguments);
+// }
+// aa(1, 2, 3);
+
+// let all = {
+//     mymap() {
+//         console.log([...arr]);
+//     }
+// // }
+// console.log(!"sd");
+// console.log(+true);
+
+// let a = 3
+// let b = new Number(3)
+// console.log(b);
+// "use strict"
+// let gr
+// function Person(firstName, lastName) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+// }
+
+// const member = new Person("Lydia", "Hallie");
+// Person.getFullName = function () {
+//   return `${this.firstName} ${this.lastName}`;
+// };
+
+// // console.log(member.getFullName());
+// function Person(firstName, lastName) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+// }
+
+// const lydia = new Person("Lydia", "Hallie");
+// const sarah = Person("Sarah", "Smith");
+
+// // console.log(lydia);
+// // console.log(sarah);
+// let a = 1
+// console.log(++a);
+function getPersonInfo(one, two, three) {
+  console.log(one);
+  console.log(two);
+  console.log(three);
 }
-printList(head)
+
+const person = "Lydia";
+const age = 21;
+
+getPersonInfo`${person} is ${age} years old`;
