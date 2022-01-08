@@ -2,17 +2,17 @@
   "todos": [
     {
       "todo": "Learn Vue",
-      "status": true,
+      "status": false,
       "id": 2
     },
     {
       "todo": "Learn Tailwind",
-      "status": true,
+      "status": false,
       "id": 3
     },
     {
       "todo": "Learn",
-      "status": true,
+      "status": false,
       "id": 4
     }
   ]
