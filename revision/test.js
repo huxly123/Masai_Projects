@@ -123,13 +123,23 @@
 // // console.log(sarah);
 // let a = 1
 // console.log(++a);
-function getPersonInfo(one, two, three) {
-  console.log(one);
-  console.log(two);
-  console.log(three);
-}
+// function getPersonInfo(one, two, three) {
+//   console.log(one);
+//   console.log(two);
+//   console.log(three);
+// }
 
-const person = "Lydia";
-const age = 21;
+// const person = "Lydia";
+// const age = 21;
 
-getPersonInfo`${person} is ${age} years old`;
+// getPersonInfo`${person} is ${age} years old`;
+
+// let a = 0
+
+// function ii() {
+//   function f () {
+//     console.log(a);
+//   }
+//   return f
+// }
+// ii()()
