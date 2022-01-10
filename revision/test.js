@@ -143,3 +143,15 @@
 //   return f
 // }
 // ii()()
+
+let obj = {
+    name: "hux",
+   drive: function (){
+       return  ()=> {
+    console.log(this);
+}
+       console.log(this);
+    }
+}
+
+obj.drive()()

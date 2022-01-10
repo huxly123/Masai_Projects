@@ -102,3 +102,13 @@ Prop drilling is a method where we pass a props with another component with the 
 
 //////////////////////////////////////////
 
+What is Redux?
+
+*Redux is simply a store to store the state of the variables in your app.
+
+*You cannot access the store states directly ,but you have to go through some procedures
+
+*It has to be accessed through a “Reducer” and “Actions”
+
+//////////////////////////////////////////
+
