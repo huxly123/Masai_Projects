@@ -110,5 +110,10 @@ What is Redux?
 
 *It has to be accessed through a “Reducer” and “Actions”
 
-//////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
+What is redux is how it manages state?
+
+Redux allows you to manage your app's state in a single place and keep changes in your app more predictable and traceable. ... This usually happens when your app grows to the scale where managing app state becomes a hassle; and you start looking out for making it easy and simple.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
