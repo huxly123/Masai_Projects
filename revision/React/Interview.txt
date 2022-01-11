@@ -117,3 +117,7 @@ What is redux is how it manages state?
 Redux allows you to manage your app's state in a single place and keep changes in your app more predictable and traceable. ... This usually happens when your app grows to the scale where managing app state becomes a hassle; and you start looking out for making it easy and simple.
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
+
+Context Api vs Redux?
+
+Context API is easy to is use as it has a short learning curve. It requires less code, and because there's no need of extra libraries, bundle sizes are reduced. Redux on the other hand requires adding more libraries to the application bundle. The syntax is complex and extensive creating unnecessary work and complexity

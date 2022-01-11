@@ -144,14 +144,21 @@
 // }
 // ii()()
 
-let obj = {
-    name: "hux",
-   drive: function (){
-       return  ()=> {
-    console.log(this);
-}
-       console.log(this);
-    }
-}
+// let obj = {
+//     name: "hux",
+//    drive: function (){
+//        return  ()=> {
+//     console.log(this);
+// }
+//        console.log(this);
+//     }
+// }
 
-obj.drive()()
+// obj.drive()()
+// var myArray = [1, 2, 3,3];
+
+
+// Array.prototype.foo = function () {
+//   return this[0]
+// };
+// console.log(myArray.foo());
