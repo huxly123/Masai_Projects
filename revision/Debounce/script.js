@@ -1,13 +1,14 @@
 // Debounce  in Javascript
-
+    let counter = 1;
 const getData = () => {
-  console.log("Fetching");
+
+    console.log("Fetching"+counter);
+    counter++
 };
 
 // const doSomeMagic = function (fn, delay) {
 //   let timer;
 //     return function () {
-//       console.log(arguments);
 //     clearTimeout(timer);
 //     timer = setTimeout(() => {
 //       fn.apply(this, arguments);
@@ -36,7 +37,7 @@ const doSomeMagic = function (fn, limit) {
   };
 };
 
-const betterFunction = doSomeMagic(getData, 500);
+const betterFunction = doSomeMagic(getData, 5800);
 
 
 // here this is for global object
