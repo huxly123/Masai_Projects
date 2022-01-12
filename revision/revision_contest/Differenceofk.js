@@ -7,29 +7,33 @@ function runProgram(input) {
     let arr = input[line++].trim().split(" ").map(Number);
     arr = arr.sort((a, b) => a - b);
     let left = 0;
-    let right = n - 1;
-    let flag = false;
-    while (left < right) {
-      if (arr[left] + arr[right] < k) {
-        left++;
-      } else if (arr[left] + arr[right] > k) {
-        right--;
-      } else if (arr[left] + arr[right] == k) {
-        flag = true;
-        break;
-      }
+    let right =1;
+      let flag = false;
+    while (left <= right && right <n) {
+     if (arr[right] - arr[left] < k) {
+              right++;
+          }
+          else if (arr[right] - arr[left] > k) {
+            left++;
+          }
+          else if (arr[right] - arr[left] == k) {
+            flag = true
+            break
+          }
     }
     if (flag) {
-      console.log(1);
+      console.log("Yes");
     } else {
-      console.log(-1);
+      console.log("No");
     }
   }
 }
 if (process.env.USERNAME === "huxly") {
-  runProgram(`1
-5 2
-3 4 0 2 7`);
+  runProgram(`2
+5 3
+1 2 3 4 5
+6 0
+-8 -7 5 6 6 9`);
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");
