@@ -121,3 +121,17 @@ Redux allows you to manage your app's state in a single place and keep changes i
 Context Api vs Redux?
 
 Context API is easy to is use as it has a short learning curve. It requires less code, and because there's no need of extra libraries, bundle sizes are reduced. Redux on the other hand requires adding more libraries to the application bundle. The syntax is complex and extensive creating unnecessary work and complexity
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+What is useeffect?
+
+    *Use effect is asynchronous after the code finished then only it get executed*
+
+      useEffect(() => {
+    window.addEventListener('resize', handleresize)
+    console.log("innerup");
+    return () => {
+      window.removeEventListener('resize',handleresize)    //cleanup function  (after unmounting addevent listener will still be there and slow the app so we need to clean it up)
+    }

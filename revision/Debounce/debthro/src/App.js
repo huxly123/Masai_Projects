@@ -1,33 +1,28 @@
-import React, { useState } from "react";
-// import SearchBar from "src/screens/Home/SearchBar";
-import { debounceFunc } from "./components/Debounce";
+import React, { useEffect, useState } from "react";
 
-let debounceHandler = null;
 
 function App() {
- const [searchInput, setSearchInput] = useState("");
 
- function fetchData(input) {
-   if (input !== "") {
-     console.log(`fetching data for ${input}`);
-   }
- }
+  const [hand, setHand] = useState(window.innerHeight)
 
- function handleInput(event) {
-   const newSearchInput = event.target.value;
-   setSearchInput(newSearchInput);
-   debounceHandler = debounceFunc(
-     () => fetchData(newSearchInput),
-     debounceHandler,
-     1000
-   );
- }
+  const handleresize = () => {
+    setHand(window.innerHeight)
+  }
+  useEffect(() => {
+    window.addEventListener('resize', handleresize)
+    console.log("innerup");
+    return () => {
+      window.removeEventListener('resize',handleresize)
+    }
 
- function onClear() {
-   setSearchInput("");
- }
-
- return <SearchBar {...{ searchInput, handleInput, onClear }} />;
+})
+console.log("outside");
+  return (
+    <div>
+      <h1>Hi</h1>
+      <h1>{ hand}</h1>
+    </div>
+  )
 }
 
 export default App;
